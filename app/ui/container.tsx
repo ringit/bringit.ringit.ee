@@ -6,7 +6,7 @@ export interface ContainerProps {
 }
 
 function Container({ children, as: Tag = 'div' }: ContainerProps) {
-  return <Tag className="max-w-[56.25rem] mx-auto w-full">{children}</Tag>;
+  return <Tag className="mx-auto w-full max-w-[56.25rem]">{children}</Tag>;
 }
 
 export { Container };

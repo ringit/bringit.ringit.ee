@@ -11,11 +11,11 @@ function Footer() {
       {showIllustration && (
         <IllustrationLeft className="pointer-events-none absolute bottom-0 left-0 h-80 w-auto" />
       )}
-      <IllustrationText className="absolute bottom-8 md:bottom-auto md:-top-12 left-4 md:left-1/2 md:-translate-x-1/2 z-[1] -rotate-[14deg]">
+      <IllustrationText className="absolute bottom-8 left-4 z-[1] -rotate-[14deg] md:-top-12 md:bottom-auto md:left-1/2 md:-translate-x-1/2">
         <p>Saun!!!</p>
         <p>Baar!!!</p>
       </IllustrationText>
-      <ul className="text-right text-2xl md:text-4xl tracking-widest font-bold p-4">
+      <ul className="p-4 text-right text-2xl font-bold tracking-widest md:text-4xl">
         <li>
           <time dateTime="2023-09-28">28.09</time>
         </li>

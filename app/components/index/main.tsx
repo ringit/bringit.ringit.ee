@@ -7,7 +7,7 @@ function Main() {
     <main className="relative flex-1">
       <h1 className="sr-only">BringIT Conference</h1>
       <Container as="section">
-        <div className="bg-white rounded-[4rem] md:rounded-full text-center py-12 md:py-24 px-4 md:-mt-32 space-y-12">
+        <div className="space-y-12 rounded-[4rem] bg-white px-4 py-12 text-center md:-mt-32 md:rounded-full md:py-24">
           <Schedule />
 
           <div className="space-y-1">
@@ -17,9 +17,9 @@ function Main() {
               rel="noopener noreferrer"
               className="inline-block"
             >
-              <RingITLogo className="w-32 h-auto" />
+              <RingITLogo className="h-auto w-32" />
             </a>
-            <p className="text-foreground/50 text-xs">
+            <p className="text-xs text-foreground/50">
               powered by{' '}
               <a
                 href="https://ringit.ee"
