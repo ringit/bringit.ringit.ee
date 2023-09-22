@@ -16,8 +16,12 @@ function Footer() {
         <p>Baar!!!</p>
       </IllustrationText>
       <ul className="text-right text-2xl md:text-4xl tracking-widest font-bold p-4">
-        <li>28.09</li>
-        <li>15:00</li>
+        <li>
+          <time dateTime="2023-09-28">28.09</time>
+        </li>
+        <li>
+          <time dateTime="15:00">15:00</time>
+        </li>
         <li>
           <a
             href="https://heldeke.ee/et/"

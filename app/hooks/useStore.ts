@@ -2,7 +2,7 @@ import React from 'react';
 
 import { DataContext, type DataContextType } from '~/context';
 
-function useState() {
+function useStore() {
   const { schedule } = React.useContext<DataContextType>(DataContext);
 
   return {
@@ -10,4 +10,4 @@ function useState() {
   };
 }
 
-export { useState };
+export { useStore };

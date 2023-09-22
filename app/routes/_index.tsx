@@ -33,8 +33,8 @@ export async function loader() {
 
 export const meta: MetaFunction = () => {
   return [
-    { title: 'BRING_IT' },
-    { name: 'description', content: 'BRING_IT powered by RingIT' },
+    { title: 'BRING_IT @Heldeke! 28.09.2023' },
+    { name: 'description', content: 'BringIT Conference powered by RingIT' },
     {
       tagName: 'link',
       rel: 'canonical',
@@ -50,7 +50,7 @@ export const meta: MetaFunction = () => {
     },
     {
       property: 'og:description',
-      content: 'BRING_IT powered by RingIT',
+      content: 'BringIT Conference powered by RingIT',
     },
     {
       property: 'og:image',

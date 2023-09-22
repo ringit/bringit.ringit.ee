@@ -5,6 +5,7 @@ import { Schedule } from './schedule';
 function Main() {
   return (
     <main className="relative flex-1">
+      <h1 className="sr-only">BringIT Conference</h1>
       <Container as="section">
         <div className="bg-white rounded-[4rem] md:rounded-full text-center py-12 md:py-24 px-4 md:-mt-32 space-y-12">
           <Schedule />
