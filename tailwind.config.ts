@@ -6,16 +6,10 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        border: 'hsl(var(--border))',
-        ring: 'hsl(var(--ring))',
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
-        primary: {
-          DEFAULT: 'hsl(var(--primary))',
-        },
-        secondary: {
-          DEFAULT: 'hsl(var(--secondary))',
-        },
+        primary: 'hsl(var(--primary))',
+        secondary: 'hsl(var(--secondary))',
       },
       fontFamily: {
         sans: ['var(--font-cooper)', ...fontFamily.sans],
@@ -23,5 +17,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require('tailwindcss-animate')],
+  plugins: [],
 } satisfies Config;

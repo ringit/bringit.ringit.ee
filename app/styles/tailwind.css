@@ -38,18 +38,12 @@
     --primary: 247 85% 61%;
     --secondary: 42 100% 46%;
 
-    --border: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
-
     --font-cooper: 'Cooper Hewitt';
     --font-reglo: 'Reglo';
   }
 }
 
 @layer base {
-  * {
-    @apply border-border;
-  }
   body {
     @apply flex flex-col;
     @apply bg-background text-white font-medium overflow-x-hidden min-h-screen;
