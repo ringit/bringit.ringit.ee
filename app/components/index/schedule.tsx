@@ -14,17 +14,13 @@ function Schedule() {
               <p className="font-light">
                 <time dateTime={`2023-09-28 ${timeStart}`}>{item.time}</time>
               </p>
-              <p className="font-light">
-                <h3>
-                  {item.name}{' '}
-                  <span className="sr-only">
-                    on {`2023-09-28 at ${timeStart}`}
-                  </span>
-                </h3>
-              </p>
-              <p>
-                <h4>{item.title}</h4>
-              </p>
+              <h3 className="font-light">
+                {item.name}{' '}
+                <span className="sr-only">
+                  on {`2023-09-28 at ${timeStart}`}
+                </span>
+              </h3>
+              <h4>{item.title}</h4>
             </li>
           );
         })}
