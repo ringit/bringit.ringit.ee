@@ -14,6 +14,7 @@ import stylesheet from '~/styles/tailwind.css';
 export const links: LinksFunction = () => [
   ...(cssBundleHref ? [{ rel: 'stylesheet', href: cssBundleHref }] : []),
   { rel: 'stylesheet', href: stylesheet },
+  { rel: 'preload', href: stylesheet, as: 'style' },
   {
     rel: 'preload',
     href: '/fonts/cooper-hewitt/CooperHewitt-Bold.woff2',
@@ -42,15 +43,52 @@ export const links: LinksFunction = () => [
     type: 'font/woff2',
     crossOrigin: 'anonymous',
   },
+  {
+    rel: 'manifest',
+    href: '/site.webmanifest',
+    crossOrigin: 'use-credentials',
+  } as const, // necessary to make typescript happy
+  {
+    rel: 'icon',
+    type: 'image/svg+xml',
+    href: '/favicons/safari-pinned-tab.svg',
+  },
+  {
+    rel: 'apple-touch-icon',
+    sizes: '180x180',
+    href: '/favicons/apple-touch-icon.png',
+  },
+  {
+    rel: 'icon',
+    type: 'image/png',
+    sizes: '32x32',
+    href: '/favicons/favicon-32x32.png',
+  },
+  {
+    rel: 'icon',
+    type: 'image/png',
+    sizes: '16x16',
+    href: '/favicons/favicon-16x16.png',
+  },
+  {
+    rel: 'mask-icon',
+    href: '/favicons/safari-pinned-tab.svg',
+    color: '#5A47F0',
+  },
+  {
+    rel: 'mask-icon',
+    href: '/favicon.ico',
+  },
 ];
 
 export default function App() {
   return (
-    <html lang="en">
+    <html lang="et">
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
+        <meta name="theme-color" content="#5A47F0" />
         <Links />
       </head>
       <body>
