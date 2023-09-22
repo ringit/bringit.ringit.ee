@@ -17,6 +17,7 @@ function Main() {
               rel="noopener noreferrer"
               className="inline-block"
             >
+              <span className="sr-only">RingIT Webpage</span>
               <RingITLogo className="h-auto w-32" />
             </a>
             <p className="text-xs text-foreground/50">
