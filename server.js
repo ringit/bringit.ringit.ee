@@ -6,6 +6,7 @@ import { broadcastDevReady, installGlobals } from '@remix-run/node';
 import chokidar from 'chokidar';
 import compression from 'compression';
 import express from 'express';
+import helmet from 'helmet';
 import morgan from 'morgan';
 import sourceMapSupport from 'source-map-support';
 
@@ -31,11 +32,33 @@ app.use(
   express.static('public/build', { immutable: true, maxAge: '1y' }),
 );
 
+// Aggressively cache fonts for a year
+app.use(
+  '/fonts',
+  express.static('public/fonts', { immutable: true, maxAge: '1y' }),
+);
+
 // Everything else (like favicon.ico) is cached for an hour. You may want to be
 // more aggressive with this caching.
 app.use(express.static('public', { maxAge: '1h' }));
 
 app.use(morgan('tiny'));
+
+app.use(
+  helmet({
+    crossOriginEmbedderPolicy: false,
+    contentSecurityPolicy: {
+      directives: {
+        'default-src': ["'none'"],
+        'connect-src':
+          process.env.NODE_ENV === 'development' ? ['ws:', "'self'"] : null,
+        'script-src': ["'self'", "'unsafe-inline'"],
+        'manifest-src': ["'self'"],
+        'upgrade-insecure-requests': null,
+      },
+    },
+  }),
+);
 
 app.all(
   '*',

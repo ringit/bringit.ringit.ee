@@ -47,7 +47,7 @@ export const meta: MetaFunction = () => {
     },
     {
       property: 'og:title',
-      content: 'BRING_IT',
+      content: 'BRING_IT @Heldeke! 28.09.2023',
     },
     {
       property: 'og:description',
