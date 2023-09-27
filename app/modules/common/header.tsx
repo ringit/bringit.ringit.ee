@@ -1,7 +1,7 @@
 import { useMedia } from 'react-use';
 
-import { IllustrationRight } from '~/components/index/illustrationRight';
-import { IllustrationText } from '~/components/index/illustrationText';
+import { IllustrationRight } from '~/modules/index/illustrationRight';
+import { IllustrationText } from '~/modules/index/illustrationText';
 import { Logo } from '~/ui/logo';
 
 function Header() {

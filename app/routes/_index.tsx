@@ -1,10 +1,10 @@
 import { json, type MetaFunction } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
 
-import { Footer } from '~/components/common/footer';
-import { Header } from '~/components/common/header';
-import { Main } from '~/components/index/main';
 import { DataContext } from '~/context';
+import { Footer } from '~/modules/common/footer';
+import { Header } from '~/modules/common/header';
+import { Main } from '~/modules/index/main';
 
 export async function loader() {
   const data = [

@@ -1,7 +1,7 @@
 import { useMedia } from 'react-use';
 
-import { IllustrationLeft } from '~/components/index/illustrationLeft';
-import { IllustrationText } from '~/components/index/illustrationText';
+import { IllustrationLeft } from '~/modules/index/illustrationLeft';
+import { IllustrationText } from '~/modules/index/illustrationText';
 
 function Footer() {
   const showIllustration = useMedia('(min-width: 50rem)', true);
