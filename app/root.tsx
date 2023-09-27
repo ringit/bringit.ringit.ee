@@ -89,6 +89,7 @@ export default function App() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
         <meta name="theme-color" content="#5A47F0" />
+        <meta name="google-site-verification" content="obURCzHSP2Z7LefP9GtV55e7lhXXOab0dfqMxMLC5JE" />
         <Links />
       </head>
       <body>
