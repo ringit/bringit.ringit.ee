@@ -2,8 +2,7 @@ import { json, type MetaFunction } from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
 
 import { DataContext } from '~/context';
-import { Footer } from '~/modules/common/footer';
-import { Header } from '~/modules/common/header';
+import { Layout } from '~/modules/common/layout';
 import { Main } from '~/modules/index/main';
 
 export async function loader() {
@@ -77,9 +76,9 @@ export default function Index() {
 
   return (
     <DataContext.Provider value={{ schedule: data }}>
-      <Header />
-      <Main />
-      <Footer />
+      <Layout>
+        <Main />
+      </Layout>
     </DataContext.Provider>
   );
 }
