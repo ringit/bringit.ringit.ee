@@ -1,6 +1,6 @@
 import React from 'react';
 
-export interface LogoProps extends React.ComponentProps<'svg'> {}
+export interface LogoProps extends React.HTMLProps<HTMLOrSVGElement> {}
 
 function Logo({ className }: LogoProps) {
   return (

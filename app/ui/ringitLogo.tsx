@@ -1,4 +1,4 @@
-export interface RingITLogoProps extends React.ComponentProps<'svg'> {}
+export interface RingITLogoProps extends React.HTMLProps<HTMLOrSVGElement> {}
 
 function RingITLogo({ className }: RingITLogoProps) {
   return (
