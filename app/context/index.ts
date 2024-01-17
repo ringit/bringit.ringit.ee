@@ -1,15 +1,11 @@
 import * as React from 'react';
 
-export interface Schedule {
-  time: string;
-  name: string;
-  title: string;
-}
+import { type data } from '~/data/events';
 
 export interface DataContextType {
-  schedule: Schedule[];
+  event: (typeof data)[0] | null;
 }
 
 export const DataContext = React.createContext<DataContextType>({
-  schedule: [],
+  event: null,
 });

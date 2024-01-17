@@ -1,3 +1,5 @@
+import React from 'react';
+
 export interface RingITLogoProps extends React.HTMLProps<HTMLOrSVGElement> {}
 
 function RingITLogo({ className }: RingITLogoProps) {

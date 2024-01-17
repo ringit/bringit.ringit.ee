@@ -1,14 +1,17 @@
-import { json, type MetaFunction } from '@remix-run/node';
+import {
+  json,
+  type LoaderFunctionArgs,
+  type MetaFunction,
+} from '@remix-run/node';
 import { useLoaderData } from '@remix-run/react';
 
 import { DataContext } from '~/context';
 import { data } from '~/data/events';
 import { Layout } from '~/modules/common/layout';
 import { Main } from '~/modules/index/main';
-import { getLatestEvent } from '~/lib/utils';
 
-export async function loader() {
-  const event = getLatestEvent(data);
+export async function loader({ params }: LoaderFunctionArgs) {
+  const event = data?.find((event) => event.slug === params.slug);
   if (!event) throw new Response('Event not found', { status: 404 });
   return json({ event });
 }
@@ -24,11 +27,11 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => {
     {
       tagName: 'link',
       rel: 'canonical',
-      href: `https://bringit.ringit.ee/`,
+      href: `https://bringit.ringit.ee/event/${data?.event.slug}`,
     },
     {
       property: 'og:url',
-      content: `https://bringit.ringit.ee/`,
+      content: `https://bringit.ringit.ee/event/${data?.event.slug}`,
     },
     {
       property: 'og:title',
