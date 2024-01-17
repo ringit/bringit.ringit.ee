@@ -51,7 +51,7 @@ app.use(
       directives: {
         'default-src': ["'none'"],
         'connect-src':
-          process.env.NODE_ENV === 'development' ? ['ws:', "'self'"] : null,
+          process.env.NODE_ENV === 'development' ? ['ws:', "'self'"] : ["'self'"],
         'script-src': ["'self'", "'unsafe-inline'"],
         'manifest-src': ["'self'"],
         'upgrade-insecure-requests': null,
