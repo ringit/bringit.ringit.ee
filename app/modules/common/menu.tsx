@@ -4,13 +4,13 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { NavLink } from '@remix-run/react';
 
 import { data } from '~/data/events';
-import { cn, getLatestEventDate } from '~/lib/utils';
+import { cn, getLatestEvent, getLatestEventDate } from '~/lib/utils';
 
 function Menu() {
   const showByDefault = useMedia('(min-width: 50rem)', true);
   const [show, setShow] = useState(showByDefault);
-  const latestEventDate = getLatestEventDate(data);
-  const menu = data.filter((event) => event.date !== latestEventDate);
+  const latestEvent = getLatestEvent(data);
+  const menu = data.filter((event) => event.date !== latestEvent?.date);
 
   useEffect(() => {
     setShow(showByDefault);
@@ -41,22 +41,36 @@ function Menu() {
           )}
         </button>
         {show && (
-          <nav className="space-y-2">
-            <h2 className="text-xs uppercase text-foreground/50">
-              Past events:
-            </h2>
-            <ul className="space-y-1">
-              {menu.map((event) => (
-                <li key={event.id}>
-                  <NavLink
-                    to={`/event/${event.slug}`}
-                    className="hover:underline"
-                  >
-                    {event.meta.title}
+          <nav className="space-y-4">
+            <div className="space-y-2">
+              <h2 className="text-xs uppercase text-foreground/50">
+                Next event:
+              </h2>
+              <ul>
+                <li>
+                  <NavLink to={`/`} className="hover:underline">
+                    {latestEvent?.meta.title}
                   </NavLink>
                 </li>
-              ))}
-            </ul>
+              </ul>
+            </div>
+            <div className="space-y-2">
+              <h2 className="text-xs uppercase text-foreground/50">
+                Past events:
+              </h2>
+              <ul className="space-y-1">
+                {menu.map((event) => (
+                  <li key={event.id}>
+                    <NavLink
+                      to={`/event/${event.slug}`}
+                      className="hover:underline"
+                    >
+                      {event.meta.title}
+                    </NavLink>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </nav>
         )}
       </div>
