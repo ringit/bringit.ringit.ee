@@ -16,22 +16,22 @@ export const data = [
     schedule: [
       {
         time: '15-16',
-        name: 'Aleksei',
+        name: 'Aleksei Šohh',
         title: 'Race Condition When Refreshing Tokens',
       },
       {
         time: '16-17',
-        name: 'Janar',
+        name: 'Janar Männistu',
         title: 'Keep Sanity While Writing Frontend Tests',
       },
       {
         time: '17:30-18:30',
-        name: 'Gert',
+        name: 'Gert Glükmann',
         title: 'Lets Remix Our Frontend',
       },
       {
         time: '18:30-19:30',
-        name: 'Jan',
+        name: 'Jan Joonas Parve',
         title: 'From Zero to Energy Hero',
       },
     ],
@@ -56,7 +56,7 @@ export const data = [
     schedule: [
       {
         time: '15-16',
-        name: 'Vladimir',
+        name: 'Vladimir Morozov',
         title: 'Is my computer - an artist?',
       },
       {
@@ -66,7 +66,7 @@ export const data = [
       },
       {
         time: '18:00-19:00',
-        name: 'Artjom',
+        name: 'Artjom Sarapov',
         title:
           'Data Unleashed: Scraping, Selling, Profiting – Legally (kind of)!',
       },

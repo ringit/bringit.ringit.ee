@@ -21,7 +21,7 @@ function Menu() {
   }
 
   return (
-    <aside className="fixed bottom-8 left-0 z-[1]">
+    <aside className="fixed bottom-8 left-0 z-10">
       <div
         className={cn(
           'relative rounded-br-2xl rounded-tr-2xl border border-background bg-white p-4 text-foreground',
