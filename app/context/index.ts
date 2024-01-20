@@ -1,9 +1,9 @@
 import * as React from 'react';
 
-import { type data } from '~/data/events';
+import { type Event } from '~/data/events';
 
 export interface DataContextType {
-  event: (typeof data)[0] | null;
+  event: Event | null;
 }
 
 export const DataContext = React.createContext<DataContextType>({

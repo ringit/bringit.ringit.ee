@@ -11,7 +11,7 @@ function Main() {
     <main className="relative flex-1">
       <h1 className="sr-only">BringIT Conference</h1>
       <Container as="section">
-        <div className="space-y-12 px-4 py-12 text-center md:-mt-32 md:pb-24">
+        <div className="space-y-12 px-4 pb-12 pt-4 text-center md:-mt-32 md:pb-24 md:pt-12">
           <Schedule />
 
           <div className="flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">

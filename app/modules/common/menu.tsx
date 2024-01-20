@@ -26,7 +26,7 @@ function Menu() {
 
   return (
     <aside className="fixed bottom-8 left-0 z-10">
-      <div className="relative rounded-br-2xl rounded-tr-2xl border border-background bg-white p-4 text-foreground">
+      <div className="relative rounded-br-2xl rounded-tr-2xl border border-gray-900 bg-white p-4 text-foreground">
         <button
           type="button"
           className="absolute right-0 top-0 p-2 text-foreground"
