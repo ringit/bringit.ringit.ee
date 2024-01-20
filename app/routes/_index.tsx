@@ -3,9 +3,9 @@ import { useLoaderData } from '@remix-run/react';
 
 import { DataContext } from '~/context';
 import { data } from '~/data/events';
+import { getLatestEvent } from '~/lib/utils';
 import { Layout } from '~/modules/common/layout';
 import { Main } from '~/modules/index/main';
-import { getLatestEvent } from '~/lib/utils';
 
 export async function loader() {
   const event = getLatestEvent(data);
@@ -19,7 +19,8 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => {
     {
       name: 'description',
       content:
-        data?.event.meta.description || 'BringIT Conference powered by RingIT',
+        data?.event.meta.description ||
+        'BringIT Conference for software developers powered by RingIT',
     },
     {
       tagName: 'link',
@@ -37,7 +38,8 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => {
     {
       property: 'og:description',
       content:
-        data?.event.meta.description || 'BringIT Conference powered by RingIT',
+        data?.event.meta.description ||
+        'BringIT Conference for software developers powered by RingIT',
     },
     {
       property: 'og:image',

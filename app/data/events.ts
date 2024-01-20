@@ -15,7 +15,8 @@ export type ScheduleItemPresentation = {
   image?: string;
 };
 
-export type Event = (typeof data)[number];
+export type Events = typeof data;
+export type Event = Events[number];
 
 export const data = [
   {
@@ -31,6 +32,7 @@ export const data = [
       title: 'BringIT @Heldeke! 28.09.2023',
       description: '',
     },
+    partner: null,
     illustrationTexts: ['Sauna!!!', 'Bar!!!'],
     schedule: [
       {
@@ -76,6 +78,7 @@ export const data = [
       name: 'fairown',
       link: 'https://www.fairown.com',
     },
+    illustrationTexts: null,
     schedule: [
       {
         type: 'presentation',
