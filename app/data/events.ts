@@ -2,12 +2,12 @@ import artjom from '~/images/atrjom.jpg';
 import markus from '~/images/markus.jpg';
 import vova from '~/images/vova.jpg';
 
-export type ItemPause = {
+export type ScheduleItemPause = {
   type: 'pause';
   title: string;
 };
 
-export type ItemPresentation = {
+export type ScheduleItemPresentation = {
   type: 'presentation';
   time: string;
   name: string;
@@ -15,28 +15,9 @@ export type ItemPresentation = {
   image?: string;
 };
 
-export interface Event {
-  id: number;
-  slug: string;
-  date: string;
-  time: string;
-  location: {
-    title: string;
-    link: string;
-  };
-  meta: {
-    title: string;
-    description: string;
-  };
-  partner?: {
-    name: string;
-    link: string;
-  };
-  illustrationTexts?: string[];
-  schedule: (ItemPause | ItemPresentation)[];
-}
+export type Event = (typeof data)[number];
 
-export const data: Event[] = [
+export const data = [
   {
     id: 1,
     slug: 'heldeke',
@@ -76,7 +57,7 @@ export const data: Event[] = [
         name: 'Jan Joonas Parve',
         title: 'From Zero to Energy Hero',
       },
-    ],
+    ] as (ScheduleItemPause | ScheduleItemPresentation)[],
   },
   {
     id: 2,
@@ -105,7 +86,7 @@ export const data: Event[] = [
       },
       {
         type: 'pause',
-        title: 'Food snacks and drinks',
+        title: 'Snacks and drinks',
       },
       {
         type: 'presentation',
@@ -116,7 +97,7 @@ export const data: Event[] = [
       },
       {
         type: 'pause',
-        title: 'Food, snacks and drinks',
+        title: 'Snacks and drinks',
       },
       {
         type: 'presentation',
@@ -126,6 +107,6 @@ export const data: Event[] = [
           'Data Unleashed: Scraping, Selling, Profiting – Legally (kind of)!',
         image: artjom,
       },
-    ],
+    ] as (ScheduleItemPause | ScheduleItemPresentation)[],
   },
-];
+] as const;

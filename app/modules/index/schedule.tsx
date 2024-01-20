@@ -1,17 +1,11 @@
 import {
-  type Event,
-  type ItemPause,
-  type ItemPresentation,
+  type ScheduleItemPause,
+  type ScheduleItemPresentation,
 } from '~/data/events';
 import { useStore } from '~/hooks/useStore';
 
-function EventPresentation({
-  event,
-  item,
-}: {
-  event: Event;
-  item: ItemPresentation;
-}) {
+function EventPresentation({ item }: { item: ScheduleItemPresentation }) {
+  const { event } = useStore();
   const timeStart = item.time.split('-')[0];
 
   return (
@@ -22,7 +16,7 @@ function EventPresentation({
             <img
               src={item.image}
               alt={item.name}
-              className="absolute inset-0 w-full h-full object-cover"
+              className="absolute inset-0 h-full w-full object-cover"
             />
           </div>
         )}
@@ -42,10 +36,10 @@ function EventPresentation({
   );
 }
 
-function EventPause({ item }: { item: ItemPause }) {
+function EventPause({ item }: { item: ScheduleItemPause }) {
   return (
     <li>
-      <h5 className="text-xs uppercase text-white/50">{item.title}</h5>
+      <h3 className="text-xs uppercase text-white/50">{item.title}</h3>
     </li>
   );
 }
@@ -58,12 +52,13 @@ function Schedule() {
       <h2 className="sr-only">Schedule</h2>
       <ul className="space-y-4 md:space-y-6">
         {event?.schedule.map((item, index) => {
-          if (item.type === 'pause') {
-            return <EventPause key={index} item={item} />;
+          switch (item.type) {
+            case 'pause':
+              return <EventPause key={index} item={item} />;
+            case 'presentation':
+            default:
+              return <EventPresentation key={item.name} item={item} />;
           }
-          return (
-            <EventPresentation key={item.name} event={event} item={item} />
-          );
         })}
       </ul>
     </div>
