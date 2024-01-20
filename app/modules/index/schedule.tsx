@@ -12,13 +12,13 @@ function EventPresentation({ item }: { item: ScheduleItemPresentation }) {
     <li className="relative overflow-hidden rounded-2xl bg-white px-4 py-8">
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         {item?.image && (
-          <div className="relative blur-lg">
+          <figure className="relative -m-4 blur-lg">
             <img
               src={item.image}
               alt={item.name}
-              className="object-cover w-full scale-110"
+              className="object-cover w-full"
             />
-          </div>
+          </figure>
         )}
         <div className="absolute inset-0 bg-gradient-to-b from-background/50 to-background/80"></div>
       </div>
