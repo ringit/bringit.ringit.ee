@@ -47,6 +47,6 @@
 @layer base {
   body {
     @apply flex flex-col;
-    @apply min-h-screen overflow-x-hidden bg-background font-medium text-white;
+    @apply min-h-screen overflow-x-hidden bg-gray-900 font-medium text-white;
   }
 }

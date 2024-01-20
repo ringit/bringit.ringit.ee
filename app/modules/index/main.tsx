@@ -34,7 +34,7 @@ function Main() {
                   className="inline-block"
                 >
                   {event.partner.name === 'fairown' && (
-                    <FairownLogo className="h-auto w-40" />
+                    <FairownLogo className="h-auto w-40 fill-white" />
                   )}
                 </a>
               </>

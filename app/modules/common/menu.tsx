@@ -1,10 +1,14 @@
 import { useEffect, useState } from 'react';
 import { useMedia } from 'react-use';
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+import {
+  ArrowLongRightIcon,
+  Bars3Icon,
+  XMarkIcon,
+} from '@heroicons/react/24/outline';
 import { NavLink } from '@remix-run/react';
 
 import { data } from '~/data/events';
-import { cn, getLatestEvent, getLatestEventDate } from '~/lib/utils';
+import { getLatestEvent } from '~/lib/utils';
 
 function Menu() {
   const showByDefault = useMedia('(min-width: 50rem)', true);
@@ -22,12 +26,7 @@ function Menu() {
 
   return (
     <aside className="fixed bottom-8 left-0 z-10">
-      <div
-        className={cn(
-          'relative rounded-br-2xl rounded-tr-2xl border border-background bg-white p-4 text-foreground',
-          show ? 'w-64' : 'w-8',
-        )}
-      >
+      <div className="relative rounded-br-2xl rounded-tr-2xl border border-background bg-white p-4 text-foreground">
         <button
           type="button"
           className="absolute right-0 top-0 p-2 text-foreground"
@@ -49,7 +48,14 @@ function Menu() {
               <ul>
                 <li>
                   <NavLink to={`/`} className="hover:underline">
-                    {latestEvent?.meta.title}
+                    {({ isActive }) => (
+                      <span className="flex items-center">
+                        {isActive && (
+                          <ArrowLongRightIcon className="mr-1 h-4 w-4" />
+                        )}
+                        <span>{latestEvent?.meta.title}</span>
+                      </span>
+                    )}
                   </NavLink>
                 </li>
               </ul>
@@ -65,7 +71,14 @@ function Menu() {
                       to={`/event/${event.slug}`}
                       className="hover:underline"
                     >
-                      {event.meta.title}
+                      {({ isActive }) => (
+                        <span className="flex items-center">
+                          {isActive && (
+                            <ArrowLongRightIcon className="mr-1 h-4 w-4" />
+                          )}
+                          <span>{event.meta.title}</span>
+                        </span>
+                      )}
                     </NavLink>
                   </li>
                 ))}

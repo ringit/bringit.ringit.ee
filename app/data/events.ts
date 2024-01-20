@@ -1,3 +1,8 @@
+import artjom from '~/images/atrjom.jpg';
+import vova from '~/images/vova.jpg';
+import markus from '~/images/markus.jpg';
+
+
 export const data = [
   {
     id: 1,
@@ -58,18 +63,21 @@ export const data = [
         time: '15-16',
         name: 'Vladimir Morozov',
         title: 'Is my computer - an artist?',
+        image: vova,
       },
       {
         time: '16:30-17:30',
         name: 'Mystery Speaker from Fairown',
         title: 'TBC',
+        image: markus,
       },
       {
         time: '18:00-19:00',
         name: 'Artjom Sarapov',
         title:
           'Data Unleashed: Scraping, Selling, Profiting – Legally (kind of)!',
+        image: artjom,
       },
     ],
   },
-];
+] as const;
