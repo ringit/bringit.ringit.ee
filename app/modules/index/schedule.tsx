@@ -41,7 +41,7 @@ function EventPresentation({ item }: { item: ScheduleItemPresentation }) {
 function EventPause({ item }: { item: ScheduleItemPause }) {
   return (
     <li>
-      <h3 className="text-xs uppercase text-white/50">{item.title}</h3>
+      <h3 className="text-xs uppercase text-white/65">{item.title}</h3>
     </li>
   );
 }

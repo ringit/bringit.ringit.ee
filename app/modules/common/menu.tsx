@@ -26,9 +26,7 @@ function Menu() {
 
   return (
     <aside className="fixed bottom-8 left-0 z-10">
-      <h2 className="sr-only">
-        Menu
-      </h2>
+      <h2 className="sr-only">Menu</h2>
       <div className="relative rounded-br-2xl rounded-tr-2xl border border-gray-900 bg-white p-4 text-foreground">
         <button
           type="button"
@@ -44,29 +42,27 @@ function Menu() {
         </button>
         {show && (
           <nav className="space-y-4">
+            {latestEvent && (
+              <div className="space-y-2">
+                <h2 className="text-xs uppercase text-black/65">Next event:</h2>
+                <ul>
+                  <li>
+                    <NavLink to={`/`} className="hover:underline">
+                      {({ isActive }) => (
+                        <span className="flex items-center">
+                          {isActive && (
+                            <ArrowLongRightIcon className="mr-1 h-4 w-4" />
+                          )}
+                          <h3>{latestEvent?.meta.title}</h3>
+                        </span>
+                      )}
+                    </NavLink>
+                  </li>
+                </ul>
+              </div>
+            )}
             <div className="space-y-2">
-              <h2 className="text-xs uppercase text-foreground/50">
-                Next event:
-              </h2>
-              <ul>
-                <li>
-                  <NavLink to={`/`} className="hover:underline">
-                    {({ isActive }) => (
-                      <span className="flex items-center">
-                        {isActive && (
-                          <ArrowLongRightIcon className="mr-1 h-4 w-4" />
-                        )}
-                        <h3>{latestEvent?.meta.title}</h3>
-                      </span>
-                    )}
-                  </NavLink>
-                </li>
-              </ul>
-            </div>
-            <div className="space-y-2">
-              <h2 className="text-xs uppercase text-foreground/50">
-                Past events:
-              </h2>
+              <h2 className="text-xs uppercase text-black/65">Past events:</h2>
               <ul className="space-y-1">
                 {menu.map((event) => (
                   <li key={event.id}>
