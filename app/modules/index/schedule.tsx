@@ -16,6 +16,8 @@ function EventPresentation({ item }: { item: ScheduleItemPresentation }) {
             <img
               src={item.image}
               alt={item.name}
+              height={480}
+              width={720}
               className="object-cover w-full"
             />
           </figure>

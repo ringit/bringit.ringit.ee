@@ -9,7 +9,6 @@ function Main() {
 
   return (
     <main className="relative flex-1">
-      <h1 className="sr-only">BringIT Conference</h1>
       <Container as="section">
         <div className="space-y-12 px-4 pb-12 pt-4 text-center md:-mt-32 md:pb-24 md:pt-12">
           <Schedule />
@@ -34,7 +33,10 @@ function Main() {
                   className="inline-block"
                 >
                   {event.partner.name === 'fairown' && (
-                    <FairownLogo className="h-auto w-40 fill-white" />
+                    <>
+                      <span className="sr-only">{event.partner.name}</span>
+                      <FairownLogo className="h-auto w-40 fill-white" />
+                    </>
                   )}
                 </a>
               </>

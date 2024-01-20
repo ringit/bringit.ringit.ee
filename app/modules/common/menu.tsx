@@ -26,6 +26,9 @@ function Menu() {
 
   return (
     <aside className="fixed bottom-8 left-0 z-10">
+      <h2 className="sr-only">
+        Menu
+      </h2>
       <div className="relative rounded-br-2xl rounded-tr-2xl border border-gray-900 bg-white p-4 text-foreground">
         <button
           type="button"
@@ -53,7 +56,7 @@ function Menu() {
                         {isActive && (
                           <ArrowLongRightIcon className="mr-1 h-4 w-4" />
                         )}
-                        <span>{latestEvent?.meta.title}</span>
+                        <h3>{latestEvent?.meta.title}</h3>
                       </span>
                     )}
                   </NavLink>
@@ -72,12 +75,12 @@ function Menu() {
                       className="hover:underline"
                     >
                       {({ isActive }) => (
-                        <span className="flex items-center">
+                        <h3 className="flex items-center">
                           {isActive && (
                             <ArrowLongRightIcon className="mr-1 h-4 w-4" />
                           )}
                           <span>{event.meta.title}</span>
-                        </span>
+                        </h3>
                       )}
                     </NavLink>
                   </li>

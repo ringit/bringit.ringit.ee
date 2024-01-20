@@ -9,6 +9,7 @@ export interface LayoutProps extends React.HTMLProps<typeof React.Fragment> {}
 function Layout({ children }: LayoutProps) {
   return (
     <>
+      <h1 className="sr-only">BringIT Conference for software developers</h1>
       <Header />
       <Menu />
       {children}
