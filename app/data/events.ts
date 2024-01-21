@@ -1,6 +1,11 @@
-import artjom from '~/images/atrjom.jpg';
-import markus from '~/images/markus.jpg';
-import vova from '~/images/vova.jpg';
+import neleBachmannImage from '~/images/nele-bachmann.jpg';
+import artjomSarapovImage from '~/images/artjom-sarapov.jpg';
+import markusMandImage from '~/images/markus-mand.jpg';
+import vladimirMorozovImage from '~/images/vladimir-morozov.jpg';
+import alekseiSohhImage from '~/images/aleksei-sohh.jpg';
+import janarMannistuImage from '~/images/janar-mannistu.jpg';
+import gertGlukmannImage from '~/images/gert-glukmann.jpg';
+import janParveImage from '~/images/jan-parve.jpg';
 
 export type ScheduleItemPause = {
   type: 'pause';
@@ -40,26 +45,30 @@ export const data = [
         time: '15-16',
         name: 'Aleksei Šohh',
         title: 'Race Condition When Refreshing Tokens',
+        image: alekseiSohhImage,
       },
       {
         type: 'presentation',
         time: '16-17',
         name: 'Janar Männistu',
         title: 'Keep Sanity While Writing Frontend Tests',
+        image: janarMannistuImage,
       },
       {
         type: 'presentation',
         time: '17:30-18:30',
         name: 'Gert Glükmann',
         title: 'Lets Remix Our Frontend',
+        image: gertGlukmannImage,
       },
       {
         type: 'presentation',
         time: '18:30-19:30',
         name: 'Jan Joonas Parve',
         title: 'From Zero to Energy Hero',
+        image: janParveImage,
       },
-    ] as (ScheduleItemPause | ScheduleItemPresentation)[],
+    ] satisfies (ScheduleItemPause | ScheduleItemPresentation)[],
   },
   {
     id: 2,
@@ -85,7 +94,7 @@ export const data = [
         time: '15-16',
         name: 'Vladimir Morozov',
         title: 'Is my computer - an artist?',
-        image: vova,
+        image: vladimirMorozovImage,
       },
       {
         type: 'pause',
@@ -95,8 +104,8 @@ export const data = [
         type: 'presentation',
         time: '16:30-17:30',
         name: 'Mystery Speaker from Fairown',
-        title: 'TBC',
-        image: markus,
+        title: 'TBA',
+        image: neleBachmannImage,
       },
       {
         type: 'pause',
@@ -108,8 +117,8 @@ export const data = [
         name: 'Artjom Sarapov',
         title:
           'Data Unleashed: Scraping, Selling, Profiting – Legally (kind of)!',
-        image: artjom,
+        image: artjomSarapovImage,
       },
-    ] as (ScheduleItemPause | ScheduleItemPresentation)[],
+    ] satisfies (ScheduleItemPause | ScheduleItemPresentation)[],
   },
 ] as const;
