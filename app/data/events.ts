@@ -103,9 +103,9 @@ export const data = [
       {
         type: 'presentation',
         time: '16:30-17:30',
-        name: 'Mystery Speaker from Fairown',
-        title: 'TBA',
-        image: neleBachmannImage,
+        name: 'Markus Mänd & Marek Läll',
+        title: 'Mastering Boost: Supercharging Spring on Kubernetes with Hazelcast',
+        image: markusMandImage,
       },
       {
         type: 'pause',
