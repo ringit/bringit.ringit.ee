@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { cssBundleHref } from '@remix-run/css-bundle';
 import type { LinksFunction } from '@remix-run/node';
 import {
@@ -7,8 +8,10 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useLocation,
 } from '@remix-run/react';
 
+import * as gtag from '~/lib/gtag.client';
 import stylesheet from '~/styles/tailwind.css';
 
 export const links: LinksFunction = () => [
@@ -82,6 +85,13 @@ export const links: LinksFunction = () => [
 ];
 
 export default function App() {
+  const location = useLocation();
+  useEffect(() => {
+    if (gtag.gaTrackingId?.length) {
+      gtag.pageview(location.pathname, gtag.gaTrackingId);
+    }
+  }, [location]);
+
   return (
     <html lang="en">
       <head>
@@ -89,10 +99,36 @@ export default function App() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
         <meta name="theme-color" content="#111827" />
-        <meta name="google-site-verification" content="obURCzHSP2Z7LefP9GtV55e7lhXXOab0dfqMxMLC5JE" />
+        <meta
+          name="google-site-verification"
+          content="obURCzHSP2Z7LefP9GtV55e7lhXXOab0dfqMxMLC5JE"
+        />
         <Links />
       </head>
       <body>
+        {process.env.NODE_ENV === 'development' || !gtag.gaTrackingId ? null : (
+          <>
+            <script
+              async
+              src={`https://www.googletagmanager.com/gtag/js?id=${gtag.gaTrackingId}`}
+            />
+            <script
+              async
+              id="gtag-init"
+              dangerouslySetInnerHTML={{
+                __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+
+                gtag('config', '${gtag.gaTrackingId}', {
+                  page_path: window.location.pathname,
+                });
+              `,
+              }}
+            />
+          </>
+        )}
         <Outlet />
         <ScrollRestoration />
         <Scripts />
