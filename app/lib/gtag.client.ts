@@ -8,8 +8,6 @@ declare global {
   }
 }
 
-export const gaTrackingId = `G-25KN3T1NCE`;
-
 /**
  * @example
  * https://developers.google.com/analytics/devguides/collection/gtagjs/pages
