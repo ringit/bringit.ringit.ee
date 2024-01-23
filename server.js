@@ -51,8 +51,14 @@ app.use(
       directives: {
         'default-src': ["'none'"],
         'connect-src':
-          process.env.NODE_ENV === 'development' ? ['ws:', "'self'"] : ["'self'"],
-        'script-src': ["'self'", "'unsafe-inline'", "https://www.googletagmanager.com"],
+          process.env.NODE_ENV === 'development'
+            ? ['ws:', "'self'"]
+            : ["'self'", '*.google-analytics.com'],
+        'script-src': [
+          "'self'",
+          "'unsafe-inline'",
+          'https://www.googletagmanager.com',
+        ],
         'manifest-src': ["'self'"],
         'upgrade-insecure-requests': null,
       },
@@ -98,12 +104,14 @@ async function reimportServer() {
  */
 function createDevRequestHandler(initialBuild) {
   let build = initialBuild;
+
   async function handleServerUpdate() {
     // 1. re-import the server build
     build = await reimportServer();
     // 2. tell Remix that this app server is now up-to-date and ready
     broadcastDevReady(build);
   }
+
   chokidar
     .watch(VERSION_PATH, { ignoreInitial: true })
     .on('add', handleServerUpdate)
