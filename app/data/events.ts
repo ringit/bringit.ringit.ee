@@ -91,7 +91,7 @@ export const data = [
     schedule: [
       {
         type: 'presentation',
-        time: '15-16',
+        time: '15:00-16:00',
         name: 'Vladimir Morozov',
         title: 'Is my computer - an artist?',
         image: vladimirMorozovImage,
