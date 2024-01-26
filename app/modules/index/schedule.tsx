@@ -18,6 +18,7 @@ function EventPresentation({ item }: { item: ScheduleItemPresentation }) {
               alt={item.name}
               height={600}
               width={900}
+              loading="lazy"
               className="object-cover w-full"
             />
           </figure>
