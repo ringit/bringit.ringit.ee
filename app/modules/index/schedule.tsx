@@ -12,7 +12,7 @@ function EventPresentation({ item }: { item: ScheduleItemPresentation }) {
     <li className="relative overflow-hidden rounded-2xl bg-white px-4 py-8">
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         {item?.image && (
-          <figure className="relative -m-4 blur-lg">
+          <figure className="relative -m-4">
             <img
               src={item.image}
               alt={item.name}
