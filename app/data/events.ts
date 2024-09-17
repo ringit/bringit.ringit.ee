@@ -139,7 +139,7 @@ export const data = [
       title: 'BringIT @Sepikoda 17.10.2024',
       description: '',
     },
-    illustrationTexts: null,
+    illustrationTexts: ['Ants&Tants!!!'],
     schedule: [
       {
         type: 'presentation',

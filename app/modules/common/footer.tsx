@@ -10,7 +10,7 @@ function Footer() {
   const { event } = useStore();
 
   return (
-    <footer className="relative flex justify-end">
+    <footer className="relative mt-12 flex justify-end">
       {showIllustration && (
         <IllustrationLeft className="pointer-events-none absolute bottom-0 left-0 h-80 w-auto" />
       )}
