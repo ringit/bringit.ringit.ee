@@ -127,16 +127,16 @@ export const data = [
     ] satisfies (ScheduleItemPause | ScheduleItemPresentation)[],
   },
   {
-    id: 2,
-    slug: 'superstuudio',
+    id: 3,
+    slug: 'sepikoda',
     date: '2024-10-17',
     time: '16:00',
     location: {
-      title: 'Põhjala Superstuudio',
-      link: 'https://www.pohjalatehas.ee/en/portfolio-item/superstuudio/',
+      title: 'Põhjala Sepikoja Gallery',
+      link: 'https://www.pohjalatehas.ee/en/portfolio-item/sepikoja-gallery-2/',
     },
     meta: {
-      title: 'BringIT @Superstuudio 17.10.2024',
+      title: 'BringIT @Sepikoda 17.10.2024',
       description: '',
     },
     illustrationTexts: null,
@@ -180,6 +180,10 @@ export const data = [
         name: 'Taivo Türnpu',
         title: '?',
         image: neleBachmannImage,
+      },
+      {
+        type: 'pause',
+        title: 'Afterparty with Ants&Tants',
       },
     ] satisfies (ScheduleItemPause | ScheduleItemPresentation)[],
   },
