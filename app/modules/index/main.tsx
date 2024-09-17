@@ -27,7 +27,7 @@ function Main() {
               <>
                 <span>x</span>
                 <a
-                  href={event?.partner.link}
+                  href={event.partner.link}
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-block"

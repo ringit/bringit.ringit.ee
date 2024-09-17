@@ -14,7 +14,9 @@ function Menu() {
   const showByDefault = useMedia('(min-width: 50rem)', true);
   const [show, setShow] = useState(showByDefault);
   const latestEvent = getLatestEvent(data);
-  const menu = data.filter((event) => event.date !== latestEvent?.date);
+  const menu = data
+    .filter((event) => event.date !== latestEvent?.date)
+    .reverse();
 
   useEffect(() => {
     setShow(showByDefault);

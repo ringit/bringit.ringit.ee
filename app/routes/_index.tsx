@@ -20,7 +20,7 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => {
       name: 'description',
       content:
         data?.event.meta.description ||
-        'BringIT Conference for software developers powered by RingIT',
+        'BringIT Meetup for Software Engineers Powered by RingIT',
     },
     {
       tagName: 'link',
@@ -39,7 +39,7 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => {
       property: 'og:description',
       content:
         data?.event.meta.description ||
-        'BringIT Conference for software developers powered by RingIT',
+        'BringIT Meetup for Software Engineers Powered by RingIT',
     },
     {
       property: 'og:image',

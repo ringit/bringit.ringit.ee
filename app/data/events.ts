@@ -1,11 +1,11 @@
-import neleBachmannImage from '~/images/nele-bachmann.jpg';
-import artjomSarapovImage from '~/images/artjom-sarapov.jpg';
-import markusMandImage from '~/images/markus-mand.jpg';
-import vladimirMorozovImage from '~/images/vladimir-morozov.jpg';
 import alekseiSohhImage from '~/images/aleksei-sohh.jpg';
-import janarMannistuImage from '~/images/janar-mannistu.jpg';
+import artjomSarapovImage from '~/images/artjom-sarapov.jpg';
 import gertGlukmannImage from '~/images/gert-glukmann.jpg';
 import janParveImage from '~/images/jan-parve.jpg';
+import janarMannistuImage from '~/images/janar-mannistu.jpg';
+import markusMandImage from '~/images/markus-mand.jpg';
+import neleBachmannImage from '~/images/nele-bachmann.jpg';
+import vladimirMorozovImage from '~/images/vladimir-morozov.jpg';
 
 export type ScheduleItemPause = {
   type: 'pause';
@@ -16,6 +16,10 @@ export type ScheduleItemPresentation = {
   type: 'presentation';
   time: string;
   name: string;
+  company?: {
+    name: string;
+    link: string;
+  };
   title: string;
   image?: string;
 };
@@ -104,7 +108,8 @@ export const data = [
         type: 'presentation',
         time: '16:30-17:30',
         name: 'Markus Mänd & Marek Läll',
-        title: 'Mastering Boost: Supercharging Spring on Kubernetes with Hazelcast',
+        title:
+          'Mastering Boost: Supercharging Spring on Kubernetes with Hazelcast',
         image: markusMandImage,
       },
       {
@@ -118,6 +123,63 @@ export const data = [
         title:
           'Data Unleashed: Scraping, Selling, Profiting – Legally (kind of)!',
         image: artjomSarapovImage,
+      },
+    ] satisfies (ScheduleItemPause | ScheduleItemPresentation)[],
+  },
+  {
+    id: 2,
+    slug: 'superstuudio',
+    date: '2024-10-17',
+    time: '16:00',
+    location: {
+      title: 'Põhjala Superstuudio',
+      link: 'https://www.pohjalatehas.ee/en/portfolio-item/superstuudio/',
+    },
+    meta: {
+      title: 'BringIT @Superstuudio 17.10.2024',
+      description: '',
+    },
+    illustrationTexts: null,
+    schedule: [
+      {
+        type: 'presentation',
+        time: '16:00-16:45',
+        name: 'Oliver Orav',
+        company: {
+          name: 'Playerbank',
+          link: 'https://playerbank.io/',
+        },
+        title: 'GitOps & Playerbank',
+        image: neleBachmannImage,
+      },
+      {
+        type: 'presentation',
+        time: '16:45-17:30',
+        name: 'Aleks Tatter',
+        title: 'OAuth 2.0',
+        image: neleBachmannImage,
+      },
+      {
+        type: 'pause',
+        title: 'Snacks and drinks',
+      },
+      {
+        type: 'presentation',
+        time: '18:00-18:45',
+        name: 'Kethmar Salumets',
+        company: {
+          name: 'Katana',
+          link: 'https://katanamrp.com/',
+        },
+        title: 'Building a component library - if and how should you do it?',
+        image: neleBachmannImage,
+      },
+      {
+        type: 'presentation',
+        time: '18:45-19:30',
+        name: 'Taivo Türnpu',
+        title: '?',
+        image: neleBachmannImage,
       },
     ] satisfies (ScheduleItemPause | ScheduleItemPresentation)[],
   },

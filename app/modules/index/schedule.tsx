@@ -19,7 +19,7 @@ function EventPresentation({ item }: { item: ScheduleItemPresentation }) {
               height={600}
               width={900}
               loading="lazy"
-              className="object-cover w-full"
+              className="w-full object-cover"
             />
           </figure>
         )}
@@ -30,7 +30,17 @@ function EventPresentation({ item }: { item: ScheduleItemPresentation }) {
           <time dateTime={`${event?.date} ${timeStart}`}>{item.time}</time>
         </p>
         <h3 className="text-2xl font-light italic">
-          {item.name}{' '}
+          <span>{item.name}</span>
+          {item.company && (
+            <a
+              href={item.company.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="ml-2 text-base not-italic hover:underline"
+            >
+              {item.company.name}
+            </a>
+          )}
           <span className="sr-only">on {`${event?.date} at ${timeStart}`}</span>
         </h3>
         <h4 className="text-2xl">{item.title}</h4>
