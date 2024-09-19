@@ -1,3 +1,4 @@
+import aleksTatterImage from '~/images/aleks-tatter.jpg';
 import alekseiSohhImage from '~/images/aleksei-sohh.jpg';
 import artjomSarapovImage from '~/images/artjom-sarapov.jpg';
 import gertGlukmannImage from '~/images/gert-glukmann.jpg';
@@ -5,6 +6,8 @@ import janParveImage from '~/images/jan-parve.jpg';
 import janarMannistuImage from '~/images/janar-mannistu.jpg';
 import markusMandImage from '~/images/markus-mand.jpg';
 import neleBachmannImage from '~/images/nele-bachmann.jpg';
+import oliverOravImage from '~/images/oliver-orav.jpg';
+import taivoTurnpuImage from '~/images/taivo-turnpu.jpg';
 import vladimirMorozovImage from '~/images/vladimir-morozov.jpg';
 
 export type ScheduleItemPause = {
@@ -139,6 +142,7 @@ export const data = [
       title: 'BringIT @Sepikoda 17.10.2024',
       description: '',
     },
+    partner: null,
     illustrationTexts: ['Ants&Tants!!!'],
     schedule: [
       {
@@ -150,14 +154,14 @@ export const data = [
           link: 'https://playerbank.io/',
         },
         title: 'GitOps & Playerbank',
-        image: neleBachmannImage,
+        image: oliverOravImage,
       },
       {
         type: 'presentation',
         time: '16:45-17:30',
         name: 'Aleks Tatter',
-        title: 'OAuth 2.0',
-        image: neleBachmannImage,
+        title: 'Can OAuth 2.0 Be Secure on the Web? Let’s Find Out',
+        image: aleksTatterImage,
       },
       {
         type: 'pause',
@@ -171,15 +175,15 @@ export const data = [
           name: 'Katana',
           link: 'https://katanamrp.com/',
         },
-        title: 'Building a component library - if and how should you do it?',
+        title: 'Building a Component Library - If and How Should You Do It?',
         image: neleBachmannImage,
       },
       {
         type: 'presentation',
         time: '18:45-19:30',
         name: 'Taivo Türnpu',
-        title: '?',
-        image: neleBachmannImage,
+        title: 'Securing Corporate Bank Data as a Credit Intermediary Partner',
+        image: taivoTurnpuImage,
       },
       {
         type: 'pause',
