@@ -4,6 +4,7 @@ import artjomSarapovImage from '~/images/artjom-sarapov.jpg';
 import gertGlukmannImage from '~/images/gert-glukmann.jpg';
 import janParveImage from '~/images/jan-parve.jpg';
 import janarMannistuImage from '~/images/janar-mannistu.jpg';
+import kethmarSalumetsImage from '~/images/kethmar-salumets.jpg';
 import markusMandImage from '~/images/markus-mand.jpg';
 import neleBachmannImage from '~/images/nele-bachmann.jpg';
 import oliverOravImage from '~/images/oliver-orav.jpg';
@@ -176,7 +177,7 @@ export const data = [
           link: 'https://katanamrp.com/',
         },
         title: 'Building a Component Library - If and How Should You Do It?',
-        image: neleBachmannImage,
+        image: kethmarSalumetsImage,
       },
       {
         type: 'presentation',
