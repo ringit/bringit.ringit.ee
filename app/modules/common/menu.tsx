@@ -6,6 +6,7 @@ import {
   XMarkIcon,
 } from '@heroicons/react/24/outline';
 import { NavLink } from '@remix-run/react';
+import clsx from 'clsx';
 
 import { data } from '~/data/events';
 import { getLatestEvent } from '~/lib/utils';
@@ -29,10 +30,18 @@ function Menu() {
   return (
     <aside className="fixed bottom-8 left-0 z-10">
       <h2 className="sr-only">Menu</h2>
-      <div className="relative rounded-br-2xl rounded-tr-2xl border border-gray-900 bg-white p-4 text-foreground">
+      <div
+        className={clsx(
+          'relative rounded-br-2xl rounded-tr-2xl border border-gray-900 bg-white text-foreground',
+          show ? 'p-4' : 'p-5',
+        )}
+      >
         <button
           type="button"
-          className="absolute right-0 top-0 p-2 text-foreground"
+          className={clsx(
+            'absolute right-0 top-0 text-foreground',
+            show ? 'p-2' : 'p-3',
+          )}
           onClick={toggleShow}
         >
           <span className="sr-only">{show ? 'Hide menu' : 'Show menu'}</span>

@@ -15,7 +15,7 @@ function Footer() {
         <IllustrationLeft className="pointer-events-none absolute bottom-0 left-0 h-80 w-auto" />
       )}
       {event?.illustrationTexts && (
-        <IllustrationText className="absolute bottom-8 left-4 z-[1] -rotate-[14deg] md:-top-12 md:bottom-auto md:left-1/2 md:-translate-x-1/2">
+        <IllustrationText className="absolute bottom-24 left-4 z-[1] -rotate-[14deg] md:-top-12 md:bottom-auto md:left-1/2 md:-translate-x-1/2">
           {event.illustrationTexts.map((text) => (
             <p key={text}>{text}</p>
           ))}
