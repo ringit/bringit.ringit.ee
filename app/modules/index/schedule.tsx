@@ -25,7 +25,7 @@ function EventPresentation({ item }: { item: ScheduleItemPresentation }) {
         )}
         <div className="absolute inset-0 bg-gradient-to-b from-background/50 to-background/80"></div>
       </div>
-      <div className="relative text-white">
+      <div className="relative text-white space-y-1">
         <p className="text-2xl font-light">
           <time dateTime={`${event?.date} ${timeStart}`}>{item.time}</time>
         </p>
