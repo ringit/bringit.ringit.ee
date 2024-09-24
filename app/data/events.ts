@@ -147,6 +147,10 @@ export const data = [
     illustrationTexts: ['Ants&Tants!!!'],
     schedule: [
       {
+        type: 'pause',
+        title: '15:30 doors open',
+      },
+      {
         type: 'presentation',
         time: '16:00-16:45',
         name: 'Oliver Orav',

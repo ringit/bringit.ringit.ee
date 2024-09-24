@@ -1,3 +1,5 @@
+import clsx from 'clsx';
+
 import {
   type ScheduleItemPause,
   type ScheduleItemPresentation,
@@ -25,7 +27,7 @@ function EventPresentation({ item }: { item: ScheduleItemPresentation }) {
         )}
         <div className="absolute inset-0 bg-gradient-to-b from-background/50 to-background/80"></div>
       </div>
-      <div className="relative text-white space-y-1">
+      <div className="relative space-y-1 text-white">
         <p className="text-2xl font-light">
           <time dateTime={`${event?.date} ${timeStart}`}>{item.time}</time>
         </p>
@@ -60,10 +62,16 @@ function EventPause({ item }: { item: ScheduleItemPause }) {
 function Schedule() {
   const { event } = useStore();
 
+  const startsWithPause = event?.schedule[0].type === 'pause';
+
   return (
     <div>
       <h2 className="sr-only">Schedule</h2>
-      <ul className="space-y-4 md:space-y-6">
+      <ul
+        className={clsx('space-y-4 md:space-y-6', {
+          'pt-12': startsWithPause,
+        })}
+      >
         {event?.schedule.map((item, index) => {
           switch (item.type) {
             case 'pause':
