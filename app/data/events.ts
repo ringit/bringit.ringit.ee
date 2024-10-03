@@ -165,6 +165,10 @@ export const data = [
         type: 'presentation',
         time: '16:45-17:30',
         name: 'Aleks Tatter',
+        company: {
+          name: 'RingIT',
+          link: 'https://ringit.ee/',
+        },
         title: 'Can OAuth 2.0 Be Secure on the Web? Let’s Find Out',
         image: aleksTatterImage,
       },
@@ -187,6 +191,10 @@ export const data = [
         type: 'presentation',
         time: '18:45-19:30',
         name: 'Taivo Türnpu',
+        company: {
+          name: 'RingIT',
+          link: 'https://ringit.ee/',
+        },
         title: 'Securing Corporate Bank Data as a Credit Intermediary Partner',
         image: taivoTurnpuImage,
       },
