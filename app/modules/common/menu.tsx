@@ -7,6 +7,7 @@ import {
 } from '@heroicons/react/24/outline';
 import { NavLink } from '@remix-run/react';
 import clsx from 'clsx';
+import { isPast } from 'date-fns';
 
 import { data } from '~/data/events';
 import { getLatestEvent } from '~/lib/utils';
@@ -15,8 +16,10 @@ function Menu() {
   const showByDefault = useMedia('(min-width: 50rem)', true);
   const [show, setShow] = useState(showByDefault);
   const latestEvent = getLatestEvent(data);
+  const latestValidEvent =
+    latestEvent && !isPast(latestEvent?.date) ? latestEvent : null;
   const menu = data
-    .filter((event) => event.date !== latestEvent?.date)
+    .filter((event) => event.date !== latestValidEvent?.date)
     .reverse();
 
   useEffect(() => {
@@ -53,7 +56,7 @@ function Menu() {
         </button>
         {show && (
           <nav className="space-y-4">
-            {latestEvent && (
+            {latestValidEvent && (
               <div className="space-y-2">
                 <h2 className="text-xs uppercase text-black/65">Next event:</h2>
                 <ul>
@@ -64,7 +67,7 @@ function Menu() {
                           {isActive && (
                             <ArrowLongRightIcon className="mr-1 h-4 w-4" />
                           )}
-                          <h3>{latestEvent?.meta.title}</h3>
+                          <h3>{latestValidEvent?.meta.title}</h3>
                         </span>
                       )}
                     </NavLink>
