@@ -1,6 +1,7 @@
 import { useStore } from '~/hooks/useStore';
 import { Container } from '~/ui/container';
 import { FairownLogo } from '~/ui/fairownLogo';
+import { KpmgLogo } from '~/ui/kpmgLogo';
 import { RingITLogo } from '~/ui/ringitLogo';
 import { Schedule } from './schedule';
 
@@ -36,6 +37,12 @@ function Main() {
                     <>
                       <span className="sr-only">{event.partner.name}</span>
                       <FairownLogo className="h-auto w-40 fill-white" />
+                    </>
+                  )}
+                  {event.partner.name === 'KPMG' && (
+                    <>
+                      <span className="sr-only">{event.partner.name}</span>
+                      <KpmgLogo className="h-auto w-40 fill-white" />
                     </>
                   )}
                 </a>

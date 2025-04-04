@@ -5,6 +5,7 @@ import {
   type ScheduleItemPresentation,
 } from '~/data/events';
 import { useStore } from '~/hooks/useStore';
+import { cn } from '~/lib/utils';
 
 function EventPresentation({ item }: { item: ScheduleItemPresentation }) {
   const { event } = useStore();
@@ -13,15 +14,15 @@ function EventPresentation({ item }: { item: ScheduleItemPresentation }) {
   return (
     <li className="relative overflow-hidden rounded-2xl bg-white px-4 py-8">
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
-        {item?.image && (
+        {item?.image?.image && (
           <figure className="relative -m-4">
             <img
-              src={item.image}
+              src={item.image.image}
               alt={item.name}
               height={600}
               width={900}
               loading="lazy"
-              className="w-full object-cover"
+              className={cn('w-full object-cover', item.image.className)}
             />
           </figure>
         )}

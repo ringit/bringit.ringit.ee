@@ -1,6 +1,7 @@
 import aleksTatterImage from '~/images/aleks-tatter.jpg';
 import alekseiSohhImage from '~/images/aleksei-sohh.jpg';
 import artjomSarapovImage from '~/images/artjom-sarapov.jpg';
+import defaultImage from '~/images/default.jpg';
 import gertGlukmannImage from '~/images/gert-glukmann.jpg';
 import janParveImage from '~/images/jan-parve.jpg';
 import janarMannistuImage from '~/images/janar-mannistu.jpg';
@@ -25,7 +26,10 @@ export type ScheduleItemPresentation = {
     link: string;
   };
   title: string;
-  image?: string;
+  image?: {
+    image: string;
+    className?: string;
+  };
 };
 
 export type Events = typeof data;
@@ -53,28 +57,36 @@ export const data = [
         time: '15-16',
         name: 'Aleksei Šohh',
         title: 'Race Condition When Refreshing Tokens',
-        image: alekseiSohhImage,
+        image: {
+          image: alekseiSohhImage,
+        },
       },
       {
         type: 'presentation',
         time: '16-17',
         name: 'Janar Männistu',
         title: 'Keep Sanity While Writing Frontend Tests',
-        image: janarMannistuImage,
+        image: {
+          image: janarMannistuImage,
+        },
       },
       {
         type: 'presentation',
         time: '17:30-18:30',
         name: 'Gert Glükmann',
         title: 'Lets Remix Our Frontend',
-        image: gertGlukmannImage,
+        image: {
+          image: gertGlukmannImage,
+        },
       },
       {
         type: 'presentation',
         time: '18:30-19:30',
         name: 'Jan Joonas Parve',
         title: 'From Zero to Energy Hero',
-        image: janParveImage,
+        image: {
+          image: janParveImage,
+        },
       },
     ] satisfies (ScheduleItemPause | ScheduleItemPresentation)[],
   },
@@ -102,7 +114,9 @@ export const data = [
         time: '15:00-16:00',
         name: 'Vladimir Morozov',
         title: 'Is my computer - an artist?',
-        image: vladimirMorozovImage,
+        image: {
+          image: vladimirMorozovImage,
+        },
       },
       {
         type: 'pause',
@@ -114,7 +128,9 @@ export const data = [
         name: 'Markus Mänd & Marek Läll',
         title:
           'Mastering Boost: Supercharging Spring on Kubernetes with Hazelcast',
-        image: markusMandImage,
+        image: {
+          image: markusMandImage,
+        },
       },
       {
         type: 'pause',
@@ -126,7 +142,9 @@ export const data = [
         name: 'Artjom Sarapov',
         title:
           'Data Unleashed: Scraping, Selling, Profiting – Legally (kind of)!',
-        image: artjomSarapovImage,
+        image: {
+          image: artjomSarapovImage,
+        },
       },
     ] satisfies (ScheduleItemPause | ScheduleItemPresentation)[],
   },
@@ -159,7 +177,9 @@ export const data = [
           link: 'https://playerbank.io/',
         },
         title: 'GitOps & Playerbank',
-        image: oliverOravImage,
+        image: {
+          image: oliverOravImage,
+        },
       },
       {
         type: 'presentation',
@@ -170,7 +190,9 @@ export const data = [
           link: 'https://ringit.ee/',
         },
         title: 'Can OAuth 2.0 Be Secure on the Web? Let’s Find Out',
-        image: aleksTatterImage,
+        image: {
+          image: aleksTatterImage,
+        },
       },
       {
         type: 'pause',
@@ -185,7 +207,9 @@ export const data = [
           link: 'https://katanamrp.com/',
         },
         title: 'Building a Component Library - If and How Should You Do It?',
-        image: kethmarSalumetsImage,
+        image: {
+          image: kethmarSalumetsImage,
+        },
       },
       {
         type: 'presentation',
@@ -196,11 +220,94 @@ export const data = [
           link: 'https://ringit.ee/',
         },
         title: 'Securing Corporate Bank Data as a Credit Intermediary Partner',
-        image: taivoTurnpuImage,
+        image: {
+          image: taivoTurnpuImage,
+        },
       },
       {
         type: 'pause',
         title: 'Afterparty with Ants&Tants',
+      },
+    ] satisfies (ScheduleItemPause | ScheduleItemPresentation)[],
+  },
+  {
+    id: 4,
+    slug: 'beach',
+    date: '2025-04-22',
+    time: '15:00',
+    location: {
+      title: 'Teras Beach',
+      link: 'https://www.terasbeach.ee/en/',
+    },
+    meta: {
+      title: 'BringIT @Beach 22.04.2025',
+      description: '',
+    },
+    partner: {
+      name: 'KPMG',
+      link: 'https://home.kpmg/xx/en/home.html',
+    },
+    illustrationTexts: null,
+    schedule: [
+      {
+        type: 'pause',
+        title: '14:30 doors open',
+      },
+      {
+        type: 'presentation',
+        time: '15:00-15:45',
+        name: 'Raul Nugis',
+        company: {
+          name: 'KPMG',
+          link: 'https://kpmg.com/ee/et/home.html',
+        },
+        title:
+          'ArchiMate organisatsiooniarhitektuuri näide – AI loob organisatsioonivaate',
+        image: {
+          image: defaultImage,
+          className: 'blur',
+        },
+      },
+      {
+        type: 'pause',
+        title: 'Snacks and drinks',
+      },
+      {
+        type: 'presentation',
+        time: '16:00-16:45',
+        name: 'Valter Kungla',
+        company: {
+          name: 'Katana',
+          link: 'https://katanamrp.com/',
+        },
+        title: 'Teadliku juhtimise tööristakast',
+        image: {
+          image: defaultImage,
+          className: 'blur',
+        },
+      },
+      {
+        type: 'pause',
+        title: 'Snacks and drinks',
+      },
+      {
+        type: 'presentation',
+        time: '17:00-17:45',
+        name: 'Taivo Türnpu',
+        company: {
+          name: 'RingIT',
+          link: 'https://ringit.ee/',
+        },
+        title:
+          'Isikuandmed pilves: kellel on päriselt ligipääs? Kogemuslugu Euroopa suurpangaga liidestumisest.',
+        image: {
+          image: defaultImage,
+          className: 'blur',
+        },
+      },
+      {
+        type: 'pause',
+        title: 'Snacks and drinks',
       },
     ] satisfies (ScheduleItemPause | ScheduleItemPresentation)[],
   },
