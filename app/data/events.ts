@@ -280,7 +280,7 @@ export const data = [
           name: 'Katana',
           link: 'https://katanamrp.com/',
         },
-        title: 'Teadliku juhtimise tööristakast',
+        title: 'Teadliku juhtimise tööriistakast',
         image: {
           image: defaultImage,
           className: 'blur',
