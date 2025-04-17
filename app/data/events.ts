@@ -9,7 +9,10 @@ import kethmarSalumetsImage from '~/images/kethmar-salumets.jpg';
 import markusMandImage from '~/images/markus-mand.jpg';
 import neleBachmannImage from '~/images/nele-bachmann.jpg';
 import oliverOravImage from '~/images/oliver-orav.jpg';
+import raulNugisImage from '~/images/raul-nugis.jpeg';
+import taivoTurnpu2Image from '~/images/taivo-turnpu-2.jpeg';
 import taivoTurnpuImage from '~/images/taivo-turnpu.jpg';
+import valterKunglaImage from '~/images/valter-kungla.jpeg';
 import vladimirMorozovImage from '~/images/vladimir-morozov.jpg';
 
 export type ScheduleItemPause = {
@@ -264,8 +267,8 @@ export const data = [
         title:
           'ArchiMate organisatsiooniarhitektuuri näide – AI loob organisatsioonivaate',
         image: {
-          image: defaultImage,
-          className: 'blur',
+          image: raulNugisImage,
+          // className: 'blur',
         },
       },
       {
@@ -282,8 +285,8 @@ export const data = [
         },
         title: 'Teadliku juhtimise tööriistakast',
         image: {
-          image: defaultImage,
-          className: 'blur',
+          image: valterKunglaImage,
+          // className: 'blur',
         },
       },
       {
@@ -301,8 +304,8 @@ export const data = [
         title:
           'Isikuandmed pilves: kellel on päriselt ligipääs? Kogemuslugu Euroopa suurpangaga liidestumisest.',
         image: {
-          image: defaultImage,
-          className: 'blur',
+          image: taivoTurnpu2Image,
+          // className: 'blur',
         },
       },
       {
