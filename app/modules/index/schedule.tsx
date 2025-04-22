@@ -15,24 +15,24 @@ function EventPresentation({ item }: { item: ScheduleItemPresentation }) {
     <li className="relative overflow-hidden rounded-2xl bg-white px-4 py-8">
       <div className="pointer-events-none absolute inset-0 overflow-hidden">
         {item?.image?.image && (
-          <figure className="relative -m-4">
+          <figure className="relative h-full md:-m-4 md:h-auto">
             <img
               src={item.image.image}
               alt={item.name}
               height={600}
               width={900}
               loading="lazy"
-              className={cn('w-full object-cover', item.image.className)}
+              className={cn('h-full w-full object-cover', item.image.className)}
             />
           </figure>
         )}
         <div className="absolute inset-0 bg-gradient-to-b from-background/50 to-background/80"></div>
       </div>
       <div className="relative space-y-1 text-white">
-        <p className="text-2xl font-light">
+        <p className="text-xl font-light md:text-2xl">
           <time dateTime={`${event?.date} ${timeStart}`}>{item.time}</time>
         </p>
-        <h3 className="text-2xl font-light italic">
+        <h3 className="text-xl font-light italic md:text-2xl">
           <span>{item.name}</span>
           {item.company && (
             <a
@@ -46,7 +46,7 @@ function EventPresentation({ item }: { item: ScheduleItemPresentation }) {
           )}
           <span className="sr-only">on {`${event?.date} at ${timeStart}`}</span>
         </h3>
-        <h4 className="text-2xl">{item.title}</h4>
+        <h4 className="text-xl md:text-2xl">{item.title}</h4>
       </div>
     </li>
   );
