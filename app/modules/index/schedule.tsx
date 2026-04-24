@@ -26,7 +26,7 @@ function EventPresentation({ item }: { item: ScheduleItemPresentation }) {
             />
           </figure>
         )}
-        <div className="absolute inset-0 bg-gradient-to-b from-background/50 to-background/80"></div>
+        <div className="absolute inset-0 bg-linear-to-b from-background/50 to-background/80"></div>
       </div>
       <div className="relative space-y-1 text-white">
         <p className="text-xl font-light md:text-2xl">
