@@ -33,8 +33,21 @@ export type ScheduleItemPresentation = {
   };
 };
 
+export type Speaker = {
+  name: string;
+  role: string;
+  description: string;
+  image?: string;
+};
+
+export type AgendaItem = {
+  title: string;
+  description: string;
+};
+
 export type Events = typeof data;
 export type Event = Events[number];
+export type SpotlightEvent = Extract<Event, { variant: 'spotlight' }>;
 
 export const data = [
   {
@@ -311,5 +324,75 @@ export const data = [
         title: 'Snacks and drinks',
       },
     ] satisfies (ScheduleItemPause | ScheduleItemPresentation)[],
+  },
+  {
+    id: 5,
+    slug: 'ringit-x-cooppank',
+    variant: 'spotlight' as const,
+    date: '2026-05-28',
+    time: '15:00',
+    location: {
+      title: 'Spotify London HQ',
+      link: 'https://spotify.com',
+    },
+    meta: {
+      title: "Let's Talk Agentic Development: Spotify x Anthropic Livestream",
+      description:
+        "Join our fireside chat, streaming live from Spotify's London HQ.",
+    },
+    partner: {
+      name: 'Anthropic',
+      link: 'https://anthropic.com',
+    },
+    illustrationTexts: null,
+    registerUrl: 'https://example.com/register',
+    schedule: [] satisfies (ScheduleItemPause | ScheduleItemPresentation)[],
+    speakers: [
+      {
+        name: 'Christian Ryan',
+        role: 'Head of AI, Compliance C...',
+        description:
+          'Christian builds products and enables builders to ship with Claude.',
+      },
+      {
+        name: 'David Soria Parra',
+        role: 'Head of Protocol, Anthropic',
+        description:
+          'David is co-creator of the Model Context Protocol (MCP).',
+      },
+      {
+        name: 'Niklas Gustavsson',
+        role: 'Distinguished Engineer, Backstage — Spotify',
+        description:
+          'Niklas has spent over 12 years shaping the technology behind Spotify.',
+      },
+      {
+        name: 'Speaker TBA',
+        role: 'Role TBA',
+        description: 'Details coming soon.',
+      },
+    ] satisfies Speaker[],
+    agenda: [
+      {
+        title: 'More than Vibes: The Day Opus 4.5 Went Online',
+        description:
+          'The moment when agentic-first software development got real.',
+      },
+      {
+        title: "Honk: Spotify's Background Coding Agent Powered by Claude",
+        description:
+          'Spotify lets anyone prompt an agent with a Slack message. What could go wrong?',
+      },
+      {
+        title: 'Context & Control: Foundations for AI at Scale',
+        description:
+          'How to standardize your ecosystem and orchestrate Claude across thousands of repos.',
+      },
+      {
+        title: 'Humans vs Agents: Testing, Reviews, and Governance',
+        description:
+          "What's so different about agentic development? Skills, rules, verification loops, and LLM as a judge.",
+      },
+    ] satisfies AgendaItem[],
   },
 ] as const;

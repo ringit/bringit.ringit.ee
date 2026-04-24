@@ -1,18 +1,16 @@
-import { useStore } from '~/hooks/useStore';
+import { type Event } from '~/data/events';
 import { Container } from '~/ui/container';
 import { FairownLogo } from '~/ui/fairownLogo';
 import { KpmgLogo } from '~/ui/kpmgLogo';
 import { RingITLogo } from '~/ui/ringitLogo';
 import { Schedule } from './schedule';
 
-function Main() {
-  const { event } = useStore();
-
+function Main({ event }: { event: Event | null }) {
   return (
     <main className="relative flex-1">
       <Container as="section">
         <div className="space-y-12 px-4 pt-4 pb-12 text-center md:-mt-32 md:pt-12 md:pb-24">
-          <Schedule />
+          <Schedule event={event} />
 
           <div className="flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
             <a

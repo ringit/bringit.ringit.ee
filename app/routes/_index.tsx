@@ -1,9 +1,10 @@
 import { useLoaderData, type MetaFunction } from 'react-router';
 
-import { DataContext } from '~/context';
 import { data } from '~/data/events';
 import { getLatestEvent } from '~/lib/utils';
 import { Layout } from '~/modules/common/layout';
+import { SpotlightHeader } from '~/modules/event-spotlight/header';
+import { SpotlightMain } from '~/modules/event-spotlight/main';
 import { Main } from '~/modules/index/main';
 
 export async function loader() {
@@ -61,12 +62,11 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => {
 
 export default function Index() {
   const { event } = useLoaderData<typeof loader>();
+  const isSpotlight = 'variant' in event && event.variant === 'spotlight';
 
   return (
-    <DataContext.Provider value={{ event }}>
-      <Layout>
-        <Main />
-      </Layout>
-    </DataContext.Provider>
+    <Layout event={event} header={isSpotlight ? <SpotlightHeader event={event} /> : undefined}>
+      {isSpotlight ? <SpotlightMain event={event} /> : <Main event={event} />}
+    </Layout>
   );
 }

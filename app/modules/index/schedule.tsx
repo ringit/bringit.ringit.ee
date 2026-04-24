@@ -1,14 +1,19 @@
 import clsx from 'clsx';
 
 import {
+  type Event,
   type ScheduleItemPause,
   type ScheduleItemPresentation,
 } from '~/data/events';
-import { useStore } from '~/hooks/useStore';
 import { cn } from '~/lib/utils';
 
-function EventPresentation({ item }: { item: ScheduleItemPresentation }) {
-  const { event } = useStore();
+function EventPresentation({
+  item,
+  event,
+}: {
+  item: ScheduleItemPresentation;
+  event: Event | null;
+}) {
   const timeStart = item.time.split('-')[0];
 
   return (
@@ -60,10 +65,8 @@ function EventPause({ item }: { item: ScheduleItemPause }) {
   );
 }
 
-function Schedule() {
-  const { event } = useStore();
-
-  const startsWithPause = event?.schedule[0].type === 'pause';
+function Schedule({ event }: { event: Event | null }) {
+  const startsWithPause = event?.schedule[0]?.type === 'pause';
 
   return (
     <div>
@@ -73,13 +76,15 @@ function Schedule() {
           'pt-12': startsWithPause,
         })}
       >
-        {event?.schedule.map((item, index) => {
+        {event?.schedule.map((item) => {
           switch (item.type) {
             case 'pause':
               return <EventPause key={`pause-${item.title}`} item={item} />;
             case 'presentation':
             default:
-              return <EventPresentation key={item.name} item={item} />;
+              return (
+                <EventPresentation key={item.name} item={item} event={event} />
+              );
           }
         })}
       </ul>
