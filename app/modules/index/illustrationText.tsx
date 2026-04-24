@@ -1,7 +1,6 @@
 import { cn } from '~/lib/utils';
 
-export interface IllustrationTextProps
-  extends React.HTMLProps<HTMLDivElement> {}
+export type IllustrationTextProps = React.HTMLProps<HTMLDivElement>;
 
 function IllustrationText({ className, children }: IllustrationTextProps) {
   return (

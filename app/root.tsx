@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-import type { LinksFunction } from 'react-router';
 import {
   Links,
   Meta,
@@ -10,10 +9,11 @@ import {
 } from 'react-router';
 
 import * as gtag from '~/lib/gtag.client';
-import stylesheet from '~/styles/tailwind.css?url';
+import type { Route } from './+types/root';
 
-export const links: LinksFunction = () => [
-  { rel: 'stylesheet', href: stylesheet },
+import '~/styles/tailwind.css';
+
+export const links: Route.LinksFunction = () => [
   {
     rel: 'preload',
     href: '/fonts/cooper-hewitt/CooperHewitt-Bold.woff2',

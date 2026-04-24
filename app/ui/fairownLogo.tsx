@@ -1,6 +1,6 @@
 import React from 'react';
 
-export interface FairownLogoProps extends React.HTMLProps<HTMLOrSVGElement> {}
+export type FairownLogoProps = React.HTMLProps<HTMLOrSVGElement>;
 
 function FairownLogo({ className }: FairownLogoProps) {
   return (

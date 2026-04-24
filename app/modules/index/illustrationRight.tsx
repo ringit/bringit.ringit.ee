@@ -1,5 +1,4 @@
-export interface IllustrationRightProps
-  extends React.HTMLProps<HTMLOrSVGElement> {}
+export type IllustrationRightProps = React.HTMLProps<HTMLOrSVGElement>;
 
 function IllustrationRight({ className }: IllustrationRightProps) {
   return (

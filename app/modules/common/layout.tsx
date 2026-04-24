@@ -4,7 +4,7 @@ import { Footer } from '~/modules/common/footer';
 import { Header } from '~/modules/common/header';
 import { Menu } from '~/modules/common/menu';
 
-export interface LayoutProps extends React.HTMLProps<typeof React.Fragment> {}
+export type LayoutProps = React.HTMLProps<typeof React.Fragment>;
 
 function Layout({ children }: LayoutProps) {
   return (

@@ -1,6 +1,6 @@
 import React from 'react';
 
-export interface LogoProps extends React.HTMLProps<HTMLOrSVGElement> {}
+export type LogoProps = React.HTMLProps<HTMLOrSVGElement>;
 
 function Logo({ className }: LogoProps) {
   return (
