@@ -26,7 +26,7 @@ function EventPresentation({ item }: { item: ScheduleItemPresentation }) {
             />
           </figure>
         )}
-        <div className="absolute inset-0 bg-linear-to-b from-background/50 to-background/80"></div>
+        <div className="from-background/50 to-background/80 absolute inset-0 bg-linear-to-b"></div>
       </div>
       <div className="relative space-y-1 text-white">
         <p className="text-xl font-light md:text-2xl">
@@ -55,7 +55,7 @@ function EventPresentation({ item }: { item: ScheduleItemPresentation }) {
 function EventPause({ item }: { item: ScheduleItemPause }) {
   return (
     <li>
-      <h3 className="text-xs uppercase text-white/65">{item.title}</h3>
+      <h3 className="text-xs text-white/65 uppercase">{item.title}</h3>
     </li>
   );
 }

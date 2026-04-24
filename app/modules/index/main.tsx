@@ -11,10 +11,10 @@ function Main() {
   return (
     <main className="relative flex-1">
       <Container as="section">
-        <div className="space-y-12 px-4 pb-12 pt-4 text-center md:-mt-32 md:pb-24 md:pt-12">
+        <div className="space-y-12 px-4 pt-4 pb-12 text-center md:-mt-32 md:pt-12 md:pb-24">
           <Schedule />
 
-          <div className="flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
+          <div className="flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
             <a
               href="https://ringit.ee"
               target="_blank"

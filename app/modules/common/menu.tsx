@@ -1,11 +1,11 @@
 import { useState } from 'react';
+import { NavLink } from 'react-router';
 import { useMedia } from 'react-use';
 import {
   ArrowLongRightIcon,
   Bars3Icon,
   XMarkIcon,
 } from '@heroicons/react/24/outline';
-import { NavLink } from 'react-router';
 import clsx from 'clsx';
 import { isPast } from 'date-fns';
 
@@ -37,14 +37,14 @@ function Menu() {
       <h2 className="sr-only">Menu</h2>
       <div
         className={clsx(
-          'relative rounded-br-2xl rounded-tr-2xl border border-gray-900 bg-white text-foreground',
+          'text-foreground relative rounded-tr-2xl rounded-br-2xl border border-gray-900 bg-white',
           show ? 'p-4' : 'p-5',
         )}
       >
         <button
           type="button"
           className={clsx(
-            'absolute right-0 top-0 text-foreground',
+            'text-foreground absolute top-0 right-0',
             show ? 'p-2' : 'p-3',
           )}
           onClick={toggleShow}
@@ -60,7 +60,7 @@ function Menu() {
           <nav className="space-y-4">
             {latestValidEvent && (
               <div className="space-y-2">
-                <h2 className="text-xs uppercase text-black/65">Next event:</h2>
+                <h2 className="text-xs text-black/65 uppercase">Next event:</h2>
                 <ul>
                   <li>
                     <NavLink to={`/`} className="hover:underline">
@@ -78,7 +78,7 @@ function Menu() {
               </div>
             )}
             <div className="space-y-2">
-              <h2 className="text-xs uppercase text-black/65">Past events:</h2>
+              <h2 className="text-xs text-black/65 uppercase">Past events:</h2>
               <ul className="space-y-1">
                 {menu.map((event) => (
                   <li key={event.id}>

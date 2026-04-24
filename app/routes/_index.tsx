@@ -1,4 +1,4 @@
-import { type MetaFunction, useLoaderData } from 'react-router';
+import { useLoaderData, type MetaFunction } from 'react-router';
 
 import { DataContext } from '~/context';
 import { data } from '~/data/events';
