@@ -1,6 +1,22 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@theme {
+  --breakpoint-min: 20rem;
+  --breakpoint-sm: 37.5rem;
+  --breakpoint-md: 50rem;
+  --breakpoint-lg: 62.5rem;
+  --breakpoint-xl: 75rem;
+  --breakpoint-2xl: 90rem;
+  --breakpoint-3xl: 106.25rem;
+
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-primary: hsl(var(--primary));
+  --color-secondary: hsl(var(--secondary));
+
+  --font-sans: 'Cooper Hewitt', ui-sans-serif, system-ui, sans-serif;
+  --font-reglo: 'Reglo', ui-sans-serif, system-ui, sans-serif;
+}
 
 @layer base {
   @font-face {
@@ -38,9 +54,6 @@
     --primary: 247 85% 61%;
     --secondary: 42 100% 46%;
     --white: 0 0% 100%;
-
-    --font-cooper: 'Cooper Hewitt';
-    --font-reglo: 'Reglo';
   }
 }
 

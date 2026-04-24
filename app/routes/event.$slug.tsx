@@ -1,9 +1,4 @@
-import {
-  json,
-  type LoaderFunctionArgs,
-  type MetaFunction,
-} from '@remix-run/node';
-import { useLoaderData } from '@remix-run/react';
+import { type LoaderFunctionArgs, type MetaFunction, useLoaderData } from 'react-router';
 
 import { DataContext } from '~/context';
 import { data } from '~/data/events';
@@ -13,7 +8,7 @@ import { Main } from '~/modules/index/main';
 export async function loader({ params }: LoaderFunctionArgs) {
   const event = data?.find((event) => event.slug === params.slug);
   if (!event) throw new Response('Event not found', { status: 404 });
-  return json({ event });
+  return { event };
 }
 
 export const meta: MetaFunction<typeof loader> = ({ data }) => {

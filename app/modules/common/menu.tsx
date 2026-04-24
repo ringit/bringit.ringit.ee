@@ -5,7 +5,7 @@ import {
   Bars3Icon,
   XMarkIcon,
 } from '@heroicons/react/24/outline';
-import { NavLink } from '@remix-run/react';
+import { NavLink } from 'react-router';
 import clsx from 'clsx';
 import { isPast } from 'date-fns';
 

@@ -1,23 +1,19 @@
 import { useEffect } from 'react';
-import { cssBundleHref } from '@remix-run/css-bundle';
-import type { LinksFunction } from '@remix-run/node';
+import type { LinksFunction } from 'react-router';
 import {
   Links,
-  LiveReload,
   Meta,
   Outlet,
   Scripts,
   ScrollRestoration,
   useLocation,
-} from '@remix-run/react';
+} from 'react-router';
 
 import * as gtag from '~/lib/gtag.client';
-import stylesheet from '~/styles/tailwind.css';
+import stylesheet from '~/styles/tailwind.css?url';
 
 export const links: LinksFunction = () => [
-  ...(cssBundleHref ? [{ rel: 'stylesheet', href: cssBundleHref }] : []),
   { rel: 'stylesheet', href: stylesheet },
-  { rel: 'preload', href: stylesheet, as: 'style' },
   {
     rel: 'preload',
     href: '/fonts/cooper-hewitt/CooperHewitt-Bold.woff2',
@@ -134,7 +130,6 @@ export default function App() {
         <Outlet />
         <ScrollRestoration />
         <Scripts />
-        <LiveReload />
       </body>
     </html>
   );
