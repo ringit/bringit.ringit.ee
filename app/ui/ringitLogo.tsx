@@ -1,8 +1,4 @@
-import React from 'react';
-
-export type RingITLogoProps = React.HTMLProps<HTMLOrSVGElement>;
-
-function RingITLogo({ className }: RingITLogoProps) {
+function RingITLogo({ className }: React.ComponentPropsWithoutRef<'svg'>) {
   return (
     <svg viewBox="0 0 104 67" fill="none" className={className}>
       <path

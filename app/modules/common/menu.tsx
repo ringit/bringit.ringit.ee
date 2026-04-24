@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { useMedia } from 'react-use';
 import {
   ArrowLongRightIcon,
@@ -15,6 +15,7 @@ import { getLatestEvent } from '~/lib/utils';
 function Menu() {
   const showByDefault = useMedia('(min-width: 50rem)', true);
   const [show, setShow] = useState(showByDefault);
+  const [prevShowByDefault, setPrevShowByDefault] = useState(showByDefault);
   const latestEvent = getLatestEvent(data);
   const latestValidEvent =
     latestEvent && !isPast(latestEvent?.date) ? latestEvent : null;
@@ -22,9 +23,10 @@ function Menu() {
     .filter((event) => event.date !== latestValidEvent?.date)
     .reverse();
 
-  useEffect(() => {
+  if (prevShowByDefault !== showByDefault) {
+    setPrevShowByDefault(showByDefault);
     setShow(showByDefault);
-  }, [showByDefault]);
+  }
 
   function toggleShow() {
     setShow((prev) => !prev);

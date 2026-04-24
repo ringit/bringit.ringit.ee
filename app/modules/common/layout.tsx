@@ -4,9 +4,7 @@ import { Footer } from '~/modules/common/footer';
 import { Header } from '~/modules/common/header';
 import { Menu } from '~/modules/common/menu';
 
-export type LayoutProps = React.HTMLProps<typeof React.Fragment>;
-
-function Layout({ children }: LayoutProps) {
+function Layout({ children }: { children?: React.ReactNode }) {
   return (
     <>
       <h1 className="sr-only">BringIT Meetup for Software Engineers</h1>

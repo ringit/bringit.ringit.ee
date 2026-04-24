@@ -1,6 +1,6 @@
-export type IllustrationLeftProps = React.HTMLProps<HTMLOrSVGElement>;
-
-function IllustrationLeft({ className }: IllustrationLeftProps) {
+function IllustrationLeft({
+  className,
+}: React.ComponentPropsWithoutRef<'svg'>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

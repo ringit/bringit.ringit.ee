@@ -8,7 +8,7 @@ export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
-export function getLatestEventDate(events: Events) {
+function getLatestEventDate(events: Events) {
   const dates = events.map((event) => event.date);
   const latestDate = closestTo(new Date(), dates);
   return latestDate ? format(latestDate, 'yyyy-MM-dd') : null;

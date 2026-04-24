@@ -1,6 +1,6 @@
-export type IllustrationRightProps = React.HTMLProps<HTMLOrSVGElement>;
-
-function IllustrationRight({ className }: IllustrationRightProps) {
+function IllustrationRight({
+  className,
+}: React.ComponentPropsWithoutRef<'svg'>) {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"

@@ -1,4 +1,4 @@
-function KpmgLogo({ className }: React.HTMLProps<HTMLOrSVGElement>) {
+function KpmgLogo({ className }: React.ComponentPropsWithoutRef<'svg'>) {
   return (
     <svg
       viewBox="0 0 92 92"

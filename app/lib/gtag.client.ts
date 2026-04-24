@@ -28,7 +28,7 @@ export const pageview = (url: string, trackingId: string) => {
  * @example
  * https://developers.google.com/analytics/devguides/collection/gtagjs/events
  */
-export const event = ({
+const event = ({
   action,
   category,
   label,

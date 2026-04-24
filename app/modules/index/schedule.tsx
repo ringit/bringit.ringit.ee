@@ -76,7 +76,7 @@ function Schedule() {
         {event?.schedule.map((item, index) => {
           switch (item.type) {
             case 'pause':
-              return <EventPause key={index} item={item} />;
+              return <EventPause key={`pause-${item.title}`} item={item} />;
             case 'presentation':
             default:
               return <EventPresentation key={item.name} item={item} />;

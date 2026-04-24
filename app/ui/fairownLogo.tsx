@@ -1,8 +1,4 @@
-import React from 'react';
-
-export type FairownLogoProps = React.HTMLProps<HTMLOrSVGElement>;
-
-function FairownLogo({ className }: FairownLogoProps) {
+function FairownLogo({ className }: React.ComponentPropsWithoutRef<'svg'>) {
   return (
     <svg viewBox="0 0 136.855 26" className={className}>
       <g>
