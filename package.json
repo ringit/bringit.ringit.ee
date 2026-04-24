@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "build": "react-router build",
-    "dev": "node server.js",
+    "dev": "cross-env NODE_ENV=development node server.js",
     "start": "cross-env NODE_ENV=production node --enable-source-maps ./server.js",
     "typecheck": "react-router typegen && tsc",
     "format": "prettier --write ."
