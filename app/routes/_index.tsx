@@ -1,14 +1,16 @@
 import { useLoaderData, type MetaFunction } from 'react-router';
 
-import { DataContext } from '~/context';
 import { data } from '~/data/events';
 import { getLatestEvent } from '~/lib/utils';
 import { Layout } from '~/modules/common/layout';
+import { SpotlightMain } from '~/modules/event-spotlight/main';
 import { Main } from '~/modules/index/main';
 
 export async function loader() {
   const event = getLatestEvent(data);
-  if (!event) throw new Response('Event not found', { status: 404 });
+  if (!event) {
+    throw new Response('Event not found', { status: 404 });
+  }
   return { event };
 }
 
@@ -61,12 +63,11 @@ export const meta: MetaFunction<typeof loader> = ({ data }) => {
 
 export default function Index() {
   const { event } = useLoaderData<typeof loader>();
+  const isSpotlight = 'variant' in event && event.variant === 'spotlight';
 
   return (
-    <DataContext.Provider value={{ event }}>
-      <Layout>
-        <Main />
-      </Layout>
-    </DataContext.Provider>
+    <Layout event={event}>
+      {isSpotlight ? <SpotlightMain event={event} /> : <Main event={event} />}
+    </Layout>
   );
 }

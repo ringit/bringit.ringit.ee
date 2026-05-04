@@ -4,8 +4,10 @@ import artjomSarapovImage from '~/images/artjom-sarapov.jpg';
 import gertGlukmannImage from '~/images/gert-glukmann.jpg';
 import janParveImage from '~/images/jan-parve.jpg';
 import janarMannistuImage from '~/images/janar-mannistu.jpg';
+import kethmarSalumetsImage2 from '~/images/kethmar-salumets-2.jpeg';
 import kethmarSalumetsImage from '~/images/kethmar-salumets.jpg';
 import markusMandImage from '~/images/markus-mand.jpg';
+import mihhailVerhovtsovImage from '~/images/mihhail-verhovtsov.jpeg';
 import oliverOravImage from '~/images/oliver-orav.jpg';
 import raulNugisImage from '~/images/raul-nugis.jpeg';
 import taivoTurnpu2Image from '~/images/taivo-turnpu-2.jpeg';
@@ -33,8 +35,22 @@ export type ScheduleItemPresentation = {
   };
 };
 
+export type Speaker = {
+  name: string;
+  role: string;
+  description?: string;
+  image?: string;
+};
+
+export type AgendaItem = {
+  title: string;
+  speaker: string;
+  description: string;
+};
+
 export type Events = typeof data;
 export type Event = Events[number];
+export type SpotlightEvent = Extract<Event, { variant: 'spotlight' }>;
 
 export const data = [
   {
@@ -311,5 +327,79 @@ export const data = [
         title: 'Snacks and drinks',
       },
     ] satisfies (ScheduleItemPause | ScheduleItemPresentation)[],
+  },
+  {
+    id: 5,
+    slug: 'ringit-x-cooppank',
+    variant: 'spotlight' as const,
+    date: '2026-05-28',
+    time: '15:00',
+    location: {
+      title: 'Proto Avastustehas, Pantera Saal',
+      link: 'https://www.prototehas.ee/',
+    },
+    meta: {
+      title: 'BringIT x Coop Pank 28.05.2026',
+      header: "Let's Talk Agentic Development: RingIT x Coop Pank",
+      description:
+        'An evening of talks with engineers from RingIT, Coop Pank, and Katana — covering agentic workflows, AI-assisted refactoring, and what it means to let anyone ship to production. The event is held in Estonian.',
+    },
+    partner: {
+      name: 'Coop Pank',
+      link: 'https://www.cooppank.ee/',
+    },
+    illustrationTexts: null,
+    registerUrl:
+      'https://docs.google.com/forms/d/e/1FAIpQLScyIMLzPIz3A9qovkZ0K-E_-EswlgJo0wHTvn9DC68YiFWgvg/viewform?usp=sharing&ouid=112024818952525115288',
+    schedule: [] satisfies (ScheduleItemPause | ScheduleItemPresentation)[],
+    speakers: [
+      {
+        name: 'Mihhail Verhovtsov',
+        role: 'Software Architect, RingIT',
+        image: mihhailVerhovtsovImage,
+      },
+      {
+        name: 'Anton Gramberg',
+        role: 'Software Engineer, Coop Pank',
+        // image: antonGrambergImage,
+      },
+      {
+        name: 'Kethmar Salumets',
+        role: 'Lead Software Engineer, Katana',
+        image: kethmarSalumetsImage2,
+      },
+      {
+        name: 'Aleks Tatter',
+        role: 'Senior Software Engineer, RingIT',
+        image: aleksTatterImage,
+      },
+    ] satisfies Speaker[],
+    agenda: [
+      {
+        title:
+          'Agentic Workflows in Business Apps: Can LLMs Replace Process Engines?',
+        speaker: 'Mihhail Verhovtsov',
+        description:
+          'Workflow engines like Camunda have been the backbone of business process automation for years. But LLM-powered agents challenge this model by replacing predefined flows with dynamic reasoning. This talk explores whether agentic workflows are a real alternative or just hype. Expect concrete examples, trade-offs, and a sober look at what breaks when you remove explicit process control.',
+      },
+      {
+        title: 'Agentic Refactoring',
+        speaker: 'Anton Gramberg',
+        description: '',
+      },
+      {
+        title:
+          'The Great Unblocking: Letting Anyone Build — And Getting Engineers Out* of the Way',
+        speaker: 'Kethmar Salumets',
+        description:
+          'What if your PMs and designers could ship to production themselves? No handoffs. No "can an engineer take a look?" We bet AI could put that power directly in their hands — and we tried it. Some of it worked. Some of it didn\'t. Some of it made us rethink everything. Come hear what happens to an engineering org when the people closest to the product finally get to contribute.',
+      },
+      {
+        title: 'The New Workflow',
+        speaker: 'Aleks Tatter',
+        description:
+          'The next shift in software may not come from a single tool, but from a new way of working. As AI becomes part of the process, teams will need to rethink how they build, decide, and collaborate.',
+      },
+    ] satisfies AgendaItem[],
   },
 ] as const;

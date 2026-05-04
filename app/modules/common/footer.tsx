@@ -1,13 +1,12 @@
 import { useMedia } from 'react-use';
 import { format } from 'date-fns';
 
-import { useStore } from '~/hooks/useStore';
+import { type Event } from '~/data/events';
 import { IllustrationLeft } from '~/modules/index/illustrationLeft';
 import { IllustrationText } from '~/modules/index/illustrationText';
 
-function Footer() {
+function Footer({ event }: { event: Event | null }) {
   const showIllustration = useMedia('(min-width: 50rem)', true);
-  const { event } = useStore();
 
   return (
     <footer className="relative mt-12 flex justify-end">
