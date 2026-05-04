@@ -8,17 +8,14 @@ import { Menu } from '~/modules/common/menu';
 function Layout({
   children,
   event,
-  header,
 }: {
   children: React.ReactNode;
   event: Event | null;
-  header?: React.ReactNode;
 }) {
   return (
     <>
       <h1 className="sr-only">BringIT Meetup for Software Engineers</h1>
       <Header />
-      {header}
       <Menu />
       {children}
       <Footer event={event} />
