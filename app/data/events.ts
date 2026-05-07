@@ -1,5 +1,6 @@
 import aleksTatterImage from '~/images/aleks-tatter.jpg';
 import alekseiSohhImage from '~/images/aleksei-sohh.jpg';
+import antonGrambergImage from '~/images/anton-gramberg.jpg';
 import artjomSarapovImage from '~/images/artjom-sarapov.jpg';
 import gertGlukmannImage from '~/images/gert-glukmann.jpg';
 import janParveImage from '~/images/jan-parve.jpg';
@@ -361,7 +362,7 @@ export const data = [
       {
         name: 'Anton Gramberg',
         role: 'Software Engineer, Coop Pank',
-        // image: antonGrambergImage,
+        image: antonGrambergImage,
       },
       {
         name: 'Kethmar Salumets',
