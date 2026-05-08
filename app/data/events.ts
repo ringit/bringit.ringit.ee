@@ -384,9 +384,10 @@ export const data = [
           'Workflow engines like Camunda have been the backbone of business process automation for years. But LLM-powered agents challenge this model by replacing predefined flows with dynamic reasoning. This talk explores whether agentic workflows are a real alternative or just hype. Expect concrete examples, trade-offs, and a sober look at what breaks when you remove explicit process control.',
       },
       {
-        title: 'Agentic Refactoring',
+        title: 'Changing Seats: Moving from Coder to Co-Driver',
         speaker: 'Anton Gramberg',
-        description: '',
+        description:
+          'AI is a fast driver, but crashes if fed ambiguous requirements. At Coop Pank, we started moving to the "co-driver" seat, shifting from writing code to orchestrating intent. This is a field report on our ongoing learnings and the messy reality of agentic coding where, to quote an Estonian classic: "sometimes win, always lose."',
       },
       {
         title:
