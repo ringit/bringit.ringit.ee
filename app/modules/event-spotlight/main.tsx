@@ -35,7 +35,7 @@ function SpotlightMain({ event }: { event: SpotlightEvent }) {
               <p className="text-white/90">{event.meta.description}</p>
               <p className="text-white">
                 <time dateTime={`${event.date} ${event.time}`}>
-                  {formattedDate} | {event.time}
+                  {formattedDate} | {event.time} | {event.location.title}
                 </time>
               </p>
             </div>
