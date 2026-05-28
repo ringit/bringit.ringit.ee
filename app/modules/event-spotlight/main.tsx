@@ -40,14 +40,16 @@ function SpotlightMain({ event }: { event: SpotlightEvent }) {
               </p>
             </div>
 
-            <a
-              href={event.registerUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block rounded-full border border-white bg-white px-8 py-2 text-lg font-bold text-black italic transition-colors hover:bg-white/80"
-            >
-              Register
-            </a>
+            {event.showRegisterButton && (
+              <a
+                href={event.registerUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block rounded-full border border-white bg-white px-8 py-2 text-lg font-bold text-black italic transition-colors hover:bg-white/80"
+              >
+                Register
+              </a>
+            )}
           </div>
         </div>
       </Container>
@@ -110,16 +112,18 @@ function SpotlightMain({ event }: { event: SpotlightEvent }) {
             ))}
           </ul>
 
-          <div className="text-center">
-            <a
-              href={event.registerUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block rounded-full border border-white bg-white px-8 py-2 text-lg font-bold text-black italic transition-colors hover:bg-white/80"
-            >
-              Register
-            </a>
-          </div>
+          {event.showRegisterButton && (
+            <div className="text-center">
+              <a
+                href={event.registerUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block rounded-full border border-white bg-white px-8 py-2 text-lg font-bold text-black italic transition-colors hover:bg-white/80"
+              >
+                Register
+              </a>
+            </div>
+          )}
         </div>
       </Container>
 

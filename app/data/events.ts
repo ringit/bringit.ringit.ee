@@ -352,6 +352,7 @@ export const data = [
     illustrationTexts: null,
     registerUrl:
       'https://docs.google.com/forms/d/e/1FAIpQLScyIMLzPIz3A9qovkZ0K-E_-EswlgJo0wHTvn9DC68YiFWgvg/viewform?usp=sharing&ouid=112024818952525115288',
+    showRegisterButton: false,
     schedule: [] satisfies (ScheduleItemPause | ScheduleItemPresentation)[],
     speakers: [
       {
