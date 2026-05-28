@@ -79,11 +79,11 @@ function Schedule({ event }: { event: Event | null }) {
         {event?.schedule.map((item) => {
           switch (item.type) {
             case 'pause':
-              return <EventPause key={`pause-${item.title}`} item={item} />;
+              return <EventPause key={item.id} item={item} />;
             case 'presentation':
             default:
               return (
-                <EventPresentation key={item.name} item={item} event={event} />
+                <EventPresentation key={item.id} item={item} event={event} />
               );
           }
         })}

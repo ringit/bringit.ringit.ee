@@ -17,11 +17,13 @@ import valterKunglaImage from '~/images/valter-kungla.jpeg';
 import vladimirMorozovImage from '~/images/vladimir-morozov.jpg';
 
 export type ScheduleItemPause = {
+  id: string;
   type: 'pause';
   title: string;
 };
 
 export type ScheduleItemPresentation = {
+  id: string;
   type: 'presentation';
   time: string;
   name: string;
@@ -71,6 +73,7 @@ export const data = [
     illustrationTexts: ['Sauna!!!', 'Bar!!!'],
     schedule: [
       {
+        id: '980fbca7-f717-4a2f-a4a1-508a7ea30caa',
         type: 'presentation',
         time: '15-16',
         name: 'Aleksei Šohh',
@@ -80,6 +83,7 @@ export const data = [
         },
       },
       {
+        id: '13d10026-64b9-4c11-978f-43ff8af94707',
         type: 'presentation',
         time: '16-17',
         name: 'Janar Männistu',
@@ -89,6 +93,7 @@ export const data = [
         },
       },
       {
+        id: '62b787cd-bc66-4936-b758-7421b7166e2c',
         type: 'presentation',
         time: '17:30-18:30',
         name: 'Gert Glükmann',
@@ -98,6 +103,7 @@ export const data = [
         },
       },
       {
+        id: '56a8022f-4101-40ae-91a5-756d9eb89bc0',
         type: 'presentation',
         time: '18:30-19:30',
         name: 'Jan Joonas Parve',
@@ -128,6 +134,7 @@ export const data = [
     illustrationTexts: null,
     schedule: [
       {
+        id: '7d2a070b-90a2-4b9f-829e-ab2d7a54eb04',
         type: 'presentation',
         time: '15:00-16:00',
         name: 'Vladimir Morozov',
@@ -137,10 +144,12 @@ export const data = [
         },
       },
       {
+        id: '3909fc89-a2dc-4db2-8ba4-cb50db0816be',
         type: 'pause',
         title: 'Snacks and drinks',
       },
       {
+        id: '18c9120f-67f6-4aa9-a035-627740b9e312',
         type: 'presentation',
         time: '16:30-17:30',
         name: 'Markus Mänd & Marek Läll',
@@ -151,10 +160,12 @@ export const data = [
         },
       },
       {
+        id: '9d997383-914a-430b-8df8-77a9423c6cca',
         type: 'pause',
         title: 'Snacks and drinks',
       },
       {
+        id: 'd7e47e86-19fe-453b-bf8d-d3adaa62fe3a',
         type: 'presentation',
         time: '18:00-19:00',
         name: 'Artjom Sarapov',
@@ -183,10 +194,12 @@ export const data = [
     illustrationTexts: ['Ants&Tants!!!'],
     schedule: [
       {
+        id: '5840890e-e7ec-4152-b3f9-3cb211ca1af8',
         type: 'pause',
         title: '15:30 doors open',
       },
       {
+        id: 'e91d4499-2880-40bc-8e47-33d8ef01f264',
         type: 'presentation',
         time: '16:00-16:45',
         name: 'Oliver Orav',
@@ -200,6 +213,7 @@ export const data = [
         },
       },
       {
+        id: 'ec3a3e05-d99b-4a3d-9b0b-7907a45e407d',
         type: 'presentation',
         time: '16:45-17:30',
         name: 'Aleks Tatter',
@@ -213,10 +227,12 @@ export const data = [
         },
       },
       {
+        id: '71c6b8f6-4ea5-4efa-9fdb-f073d74fe08c',
         type: 'pause',
         title: 'Snacks and drinks',
       },
       {
+        id: 'b987cba2-47ef-4b2c-9d11-b9f8587b7e92',
         type: 'presentation',
         time: '18:00-18:45',
         name: 'Kethmar Salumets',
@@ -230,6 +246,7 @@ export const data = [
         },
       },
       {
+        id: 'ecb41b8d-ac51-459f-854e-050557634b20',
         type: 'presentation',
         time: '18:45-19:30',
         name: 'Taivo Türnpu',
@@ -243,6 +260,7 @@ export const data = [
         },
       },
       {
+        id: '46a75ddd-0de9-4c54-abe5-dbd892fe430d',
         type: 'pause',
         title: 'Afterparty with Ants&Tants',
       },
@@ -268,10 +286,12 @@ export const data = [
     illustrationTexts: null,
     schedule: [
       {
+        id: 'fd7571b6-632c-4eb6-9ef4-91fd4d798369',
         type: 'pause',
         title: '14:30 doors open',
       },
       {
+        id: 'be03e8e5-dffd-4fd3-a584-447bcfcf0e33',
         type: 'presentation',
         time: '15:00-15:45',
         name: 'Raul Nugis',
@@ -287,10 +307,12 @@ export const data = [
         },
       },
       {
+        id: '1731fe7d-07b4-4652-be55-e87d232004be',
         type: 'pause',
         title: 'Snacks and drinks',
       },
       {
+        id: '65c99014-45ee-4cf8-90c2-b3a39070b06e',
         type: 'presentation',
         time: '16:00-16:45',
         name: 'Valter Kungla',
@@ -305,10 +327,12 @@ export const data = [
         },
       },
       {
+        id: '00b15f6c-5572-4b66-9a09-367deb8c7ccc',
         type: 'pause',
         title: 'Snacks and drinks',
       },
       {
+        id: '305006f8-0ff7-4db1-9af5-f41a89f088f9',
         type: 'presentation',
         time: '17:00-17:45',
         name: 'Taivo Türnpu',
@@ -324,6 +348,7 @@ export const data = [
         },
       },
       {
+        id: '138514f3-ccc3-4dd7-93be-3f346b1fbef3',
         type: 'pause',
         title: 'Snacks and drinks',
       },
