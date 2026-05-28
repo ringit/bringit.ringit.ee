@@ -7,7 +7,7 @@ import {
   XMarkIcon,
 } from '@heroicons/react/24/outline';
 import clsx from 'clsx';
-import { isPast } from 'date-fns';
+import { isPast, isToday } from 'date-fns';
 
 import { data } from '~/data/events';
 import { getLatestEvent } from '~/lib/utils';
@@ -18,7 +18,9 @@ function Menu() {
   const [prevShowByDefault, setPrevShowByDefault] = useState(showByDefault);
   const latestEvent = getLatestEvent(data);
   const latestValidEvent =
-    latestEvent && !isPast(latestEvent?.date) ? latestEvent : null;
+    latestEvent && (!isPast(latestEvent?.date) || isToday(latestEvent?.date))
+      ? latestEvent
+      : null;
   const menu = data
     .filter((event) => event.date !== latestValidEvent?.date)
     .reverse();
